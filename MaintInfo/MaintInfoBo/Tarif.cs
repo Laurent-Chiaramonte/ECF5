@@ -9,7 +9,7 @@ namespace MaintInfoBo
     public class Tarif
     {
         #region Propriétés
-        public int num_tarif { get; set; }
+        public int idTarif { get; set; }
         public DateTime date_tarif { get; set; }
         public double montant_tarif { get; set; }
         #endregion
@@ -18,7 +18,7 @@ namespace MaintInfoBo
         public Tarif() { }
         public Tarif(int num, DateTime date, double mt)
         {
-            num_tarif = num;
+            idTarif = num;
             date_tarif = date;
             montant_tarif = mt;
         }
@@ -27,7 +27,11 @@ namespace MaintInfoBo
         #region Méthodes
         public override bool Equals(object obj)
         {
-            return base.Equals(obj);
+            if (obj is Tarif)
+                return
+                    ((Tarif)obj).idTarif.Equals(this.idTarif);
+            else
+                return false;
         }
 
         public override string ToString()

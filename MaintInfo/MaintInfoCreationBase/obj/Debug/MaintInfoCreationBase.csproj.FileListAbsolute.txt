@@ -1,0 +1,14 @@
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\MaintInfoCreationBase.exe.config
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\MaintInfoCreationBase.exe
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\MaintInfoCreationBase.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\EntityFramework.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\EntityFramework.SqlServer.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\MaintInfoDal.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\MaintInfoBo.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\MaintInfoDal.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\EntityFramework.xml
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\EntityFramework.SqlServer.xml
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\MaintInfoBo.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\obj\Debug\MaintInfoCreationBase.csprojResolveAssemblyReference.cache
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\obj\Debug\MaintInfoCreationBase.exe
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\obj\Debug\MaintInfoCreationBase.pdb

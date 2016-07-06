@@ -8,10 +8,12 @@ namespace MaintInfoBo
 {
     public class Type
     {
-        #region Constructeurs
+        #region Propriétés
+        public int num_type { get; set; }
+        public string designation_type { get; set; }
         #endregion
 
-        #region Propriétés
+        #region Constructeurs
         #endregion
 
         #region Méthodes

@@ -8,10 +8,15 @@ namespace MaintInfoBo
 {
     public class Equipement
     {
-        #region Constructeurs
+        #region Propriétés
+        public int num_serie { get; set; }
+        public string designation_equip { get; set; }
+        public Contrat leContrat { get; set; }
+        public Modele leModele { get; set; }
+
         #endregion
 
-        #region Propriétés
+        #region Constructeurs
         #endregion
 
         #region Méthodes

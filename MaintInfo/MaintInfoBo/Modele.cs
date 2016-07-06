@@ -8,10 +8,14 @@ namespace MaintInfoBo
 {
     public class Modele
     {
-        #region Constructeurs
+        #region Propriétés
+        public int num_modele { get; set; }
+        public string designation_modele { get; set; }
+        public Tarif leTarif { get; set; }
+        public Type leType { get; set; }
         #endregion
 
-        #region Propriétés
+        #region Constructeurs
         #endregion
 
         #region Méthodes

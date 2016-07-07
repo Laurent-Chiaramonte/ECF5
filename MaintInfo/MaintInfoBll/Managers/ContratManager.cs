@@ -4,9 +4,90 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MaintInfoBll.Exceptions;
+using MaintInfoBo;
+using MaintInfoDal.Repository;
+
 namespace MaintInfoBll
 {
-    class ContratManager
+    public class ContratManager
     {
+        private IRepository<Contrat> _contratRepository;
+
+        public ContratManager()
+        {
+            this._contratRepository = new Repository<Contrat>();
+        }
+
+        public bool ajouterContrat(Contrat ct)
+        {
+            try
+            {
+                _contratRepository.Insert(ct);
+                _contratRepository.Save();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw new BllManagerExceptionAfficheMessage("Ajout impossible");
+            }
+        }
+
+        public bool modifierContrat(Contrat ct)
+        {
+            try
+            {
+                _contratRepository.Update(ct);
+                _contratRepository.Save();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw new BllManagerExceptionAfficheMessage("Modification impossible");
+            }
+        }
+
+        public bool supprimerContrat(Contrat ct)
+        {
+            try
+            {
+                _contratRepository.Delete(ct);
+                _contratRepository.Save();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw new BllManagerExceptionAfficheMessage("Suppression impossible");
+            }
+        }
+
+        public IEnumerable<Contrat> afficherTousLesContrats()
+        {
+            try
+            {
+                return _contratRepository.GetAll();
+            }
+            catch (Exception)
+            {
+
+                throw new BllManagerExceptionAfficheMessage("Affichage impossible");
+            }
+        }
+
+        public Contrat afficherContratParID(int id)
+        {
+            try
+            {
+                return _contratRepository.GetSingleById(id);
+            }
+            catch (Exception)
+            {
+
+                throw new BllManagerExceptionAfficheMessage("Affichage impossible");
+            }
+        }
     }
 }

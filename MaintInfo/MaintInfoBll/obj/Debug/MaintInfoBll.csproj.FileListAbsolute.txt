@@ -3,3 +3,9 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\bin\Debug\MaintInfoBll.pdb
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\obj\Debug\MaintInfoBll.csprojResolveAssemblyReference.cache
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\obj\Debug\MaintInfoBll.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\obj\Debug\MaintInfoBll.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\bin\Debug\MaintInfoBo.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\bin\Debug\MaintInfoDal.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\bin\Debug\EntityFramework.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\bin\Debug\MaintInfoBo.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\bin\Debug\MaintInfoDal.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\bin\Debug\EntityFramework.xml

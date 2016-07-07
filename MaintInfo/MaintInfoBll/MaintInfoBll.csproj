@@ -40,13 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gestionnaires\CentreInformatiqueGestionnaire.cs" />
+    <Compile Include="Gestionnaires\ClientGestionnaire.cs" />
+    <Compile Include="Gestionnaires\ContratGestionnaire.cs" />
+    <Compile Include="Gestionnaires\EquipementGestionnaire.cs" />
+    <Compile Include="Gestionnaires\GestionnaireExceptions\BllGestionnaireException.cs" />
+    <Compile Include="Gestionnaires\GestionnaireExceptions\BllGestionnaireExceptionAfficheMessage.cs" />
+    <Compile Include="Gestionnaires\GestionnaireExceptions\BllGestionnaireExceptionFinAppli.cs" />
+    <Compile Include="Gestionnaires\ModeleGestionnaire.cs" />
+    <Compile Include="Gestionnaires\SecteurGestionnaire.cs" />
+    <Compile Include="Gestionnaires\TarifGestionnaire.cs" />
+    <Compile Include="Gestionnaires\TypeModeleGestionnaire.cs" />
     <Compile Include="Managers\CentreInformatiqueManager.cs" />
     <Compile Include="Managers\ClientManager.cs" />
     <Compile Include="Managers\ContratManager.cs" />
     <Compile Include="Managers\EquipementManager.cs" />
-    <Compile Include="Exceptions\BllException.cs" />
-    <Compile Include="Exceptions\BllExceptionAfficheMessage.cs" />
-    <Compile Include="Exceptions\BllExceptionFinAppli.cs" />
+    <Compile Include="Managers\ManagerExceptions\BllManagerException.cs" />
+    <Compile Include="Managers\ManagerExceptions\BllManagerExceptionAfficheMessage.cs" />
+    <Compile Include="Managers\ManagerExceptions\BllManagerExceptionFinAppli.cs" />
     <Compile Include="Managers\ModeleManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Managers\SecteurManager.cs" />
@@ -63,9 +74,7 @@
       <Name>MaintInfoDal</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Gestionnaires\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

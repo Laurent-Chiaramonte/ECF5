@@ -29,7 +29,7 @@ namespace MaintInfoBll
             }
             catch (Exception)
             {
-                throw new BllExceptionAfficheMessage("Ajout impossible");
+                throw new BllManagerExceptionAfficheMessage("Ajout impossible");
             }
         }
 
@@ -43,7 +43,7 @@ namespace MaintInfoBll
             }
             catch (Exception)
             {
-                throw new BllExceptionAfficheMessage("Modification impossible");
+                throw new BllManagerExceptionAfficheMessage("Modification impossible");
             }
         }
 
@@ -57,7 +57,7 @@ namespace MaintInfoBll
             }
             catch (Exception)
             {
-                throw new BllExceptionAfficheMessage("Suppression impossible");
+                throw new BllManagerExceptionAfficheMessage("Suppression impossible");
             }
         }
 
@@ -69,7 +69,7 @@ namespace MaintInfoBll
             }
             catch (Exception)
             {
-                throw new BllExceptionAfficheMessage("Affichage impossible");
+                throw new BllManagerExceptionAfficheMessage("Affichage impossible");
             }
         }
 
@@ -81,7 +81,7 @@ namespace MaintInfoBll
             }
             catch (Exception)
             {
-                throw new BllExceptionAfficheMessage("Affichage impossible");
+                throw new BllManagerExceptionAfficheMessage("Affichage impossible");
             }
         }
 

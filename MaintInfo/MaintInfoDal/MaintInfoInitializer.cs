@@ -37,27 +37,27 @@ namespace MaintInfoDal
             #region Secteur
             db.Secteurs.Add(new Secteur
             {
-                secteurID = 93,
+                secteurID = 1,
                 libelleSecteur = "Provence-Alpes-Côte d'Azur"
             });
             db.Secteurs.Add(new Secteur
             {
-                secteurID = 94,
+                secteurID = 2,
                 libelleSecteur = "Corse"
             });
             db.Secteurs.Add(new Secteur
             {
-                secteurID = 82,
+                secteurID = 3,
                 libelleSecteur = "Rhône-Alpes"
             });
             db.Secteurs.Add(new Secteur
             {
-                secteurID = 91,
+                secteurID = 4,
                 libelleSecteur = "Languedoc-Roussillon"
             });
             db.Secteurs.Add(new Secteur
             {
-                secteurID = 73,
+                secteurID = 5,
                 libelleSecteur = "Midi-Pyrénées"
             });
             #endregion
@@ -70,6 +70,7 @@ namespace MaintInfoDal
                 cp_centre = "13013",
                 ville_centre = "Marseille",
                 tel_centre = "0491691322",
+                clientID = 1,
                 secteurID = 1
             });
             db.CentresInformatique.Add(new CentreInformatique
@@ -79,6 +80,7 @@ namespace MaintInfoDal
                 cp_centre = "13002",
                 ville_centre = "Marseille",
                 tel_centre = "0491601462",
+                clientID = 1,
                 secteurID = 1
             });
             db.CentresInformatique.Add(new CentreInformatique
@@ -88,6 +90,7 @@ namespace MaintInfoDal
                 cp_centre = "13011",
                 ville_centre = "Marseille",
                 tel_centre = "0491691322",
+                clientID = 2,
                 secteurID = 1
             });
             #endregion
@@ -126,32 +129,50 @@ namespace MaintInfoDal
             db.Tarifs.Add(new Tarif
             {
                 tarifID = 1,
-                date_tarif = new DateTime(01, 01, 2016),
+                date_tarif = new DateTime(01 / 01 / 2016),
                 montant_tarif = 499.99
             });
             db.Tarifs.Add(new Tarif
             {
                 tarifID = 2,
-                date_tarif = new DateTime(01, 01, 2016),
+                date_tarif = new DateTime(01 / 01 / 2016),
                 montant_tarif = 799.99
             });
             db.Tarifs.Add(new Tarif
             {
                 tarifID = 3,
-                date_tarif = new DateTime(01, 01, 2016),
+                date_tarif = new DateTime(01 / 01 / 2016),
                 montant_tarif = 999.99
             });
             db.Tarifs.Add(new Tarif
             {
                 tarifID = 4,
-                date_tarif = new DateTime(01, 01, 2016),
+                date_tarif = new DateTime(01 / 01 / 2016),
                 montant_tarif = 549.99
             });
             db.Tarifs.Add(new Tarif
             {
                 tarifID = 5,
-                date_tarif = new DateTime(01, 01, 2016),
+                date_tarif = new DateTime(01 / 01 / 2016),
                 montant_tarif = 949.99
+            });
+            db.Tarifs.Add(new Tarif
+            {
+                tarifID = 6,
+                date_tarif = new DateTime(01 / 01 / 2016),
+                montant_tarif = 399
+            });
+            db.Tarifs.Add(new Tarif
+            {
+                tarifID = 7,
+                date_tarif = new DateTime(01 / 01 / 2016),
+                montant_tarif = 439
+            });
+            db.Tarifs.Add(new Tarif
+            {
+                tarifID = 8,
+                date_tarif = new DateTime(01 / 01 / 2016),
+                montant_tarif = 919
             });
             #endregion
 
@@ -204,10 +225,31 @@ namespace MaintInfoDal
             });
             db.Modeles.Add(new Modele
             {
-                modeleID = 4,
+                modeleID = 5,
                 designation_modele = "DELL Lattitude E5630",
                 tarifID = 5,
                 typeModeleID = 2
+            });
+            db.Modeles.Add(new Modele
+            {
+                modeleID = 6,
+                designation_modele = "Ipad Mini 4",
+                tarifID = 6,
+                typeModeleID = 3
+            });
+            db.Modeles.Add(new Modele
+            {
+                modeleID = 7,
+                designation_modele = "Ipad Air 2",
+                tarifID = 7,
+                typeModeleID = 3
+            });
+            db.Modeles.Add(new Modele
+            {
+                modeleID = 8,
+                designation_modele = "Ipad Pro 12.9",
+                tarifID = 8,
+                typeModeleID = 3
             });
             #endregion
 
@@ -234,9 +276,66 @@ namespace MaintInfoDal
                 contratID = 1,
                 modeleID = 1
             });
+            db.Equipements.Add(new Equipement
+            {
+                equipementID = "4646574FDG154",
+                planification = 1,
+                contratID = 1,
+                modeleID = 8
+            });
+            db.Equipements.Add(new Equipement
+            {
+                equipementID = "1854845DSZE15",
+                planification = 4,
+                contratID = 1,
+                modeleID = 5
+            });
+            // Centre 2
+            db.Equipements.Add(new Equipement
+            {
+                equipementID = "987464131DDZE1121",
+                planification = 2,
+                contratID = 2,
+                modeleID = 1
+            });
+            db.Equipements.Add(new Equipement
+            {
+                equipementID = "464657487HYU4",
+                planification = 2,
+                contratID = 2,
+                modeleID = 1
+            });
+            db.Equipements.Add(new Equipement
+            {
+                equipementID = "1KIL41541ZE15",
+                planification = 4,
+                contratID = 2,
+                modeleID = 2
+            });
+            // Centre 3
+            db.Equipements.Add(new Equipement
+            {
+                equipementID = "4665LO74FDG155",
+                planification = 2,
+                contratID = 3,
+                modeleID = 8
+            });
+            db.Equipements.Add(new Equipement
+            {
+                equipementID = "4665LO74FDG154",
+                planification = 2,
+                contratID = 3,
+                modeleID = 8
+            });
+            db.Equipements.Add(new Equipement
+            {
+                equipementID = "185545410SZE17",
+                planification = 4,
+                contratID = 3,
+                modeleID = 1
+            });
             #endregion
-
-
+            
         }
     }
 }

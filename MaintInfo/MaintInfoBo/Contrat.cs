@@ -11,7 +11,7 @@ namespace MaintInfoBo
         #region Propriétés
         public int contratID { get; set; }
         public double montant_contrat { get; set; }
-        public short statut { get; set; }
+        public int statut { get; set; }
         public string commentaire { get; set; }
         public DateTime date_creation { get; set; }
         public DateTime date_echeance { get; set; }
@@ -22,7 +22,7 @@ namespace MaintInfoBo
 
         #region Constructeurs
         public Contrat() { }
-        public Contrat(int numct, double mtct, short stat, string comm, DateTime crea, DateTime ech, DateTime res,
+        public Contrat(int numct, double mtct, int stat, string comm, DateTime crea, DateTime ech, DateTime res,
             CentreInformatique ci)
         {
             contratID = numct;

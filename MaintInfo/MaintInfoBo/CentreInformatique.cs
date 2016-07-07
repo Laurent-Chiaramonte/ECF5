@@ -18,6 +18,7 @@ namespace MaintInfoBo
         public int clientID { get; set; }
         public Secteur leSecteur { get; set; }
         public int secteurID { get; set; }
+        public virtual Contrat leContrat { get; set; }
         #endregion
 
         #region Constructeurs

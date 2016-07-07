@@ -56,7 +56,7 @@
     <Compile Include="Configuration\ModeleConfiguration.cs" />
     <Compile Include="Configuration\SecteurConfiguration.cs" />
     <Compile Include="Configuration\TarifConfiguration.cs" />
-    <Compile Include="Configuration\TypeEConfiguration.cs" />
+    <Compile Include="Configuration\TypeModeleConfiguration.cs" />
     <Compile Include="Exceptions\DaoException.cs" />
     <Compile Include="Exceptions\DaoExceptionAfficheMessage.cs" />
     <Compile Include="Exceptions\DaoExceptionFinAppli.cs" />

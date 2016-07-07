@@ -1,0 +1,5 @@
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\bin\Debug\MaintInfoBll.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\bin\Debug\MaintInfoBll.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\obj\Debug\MaintInfoBll.csprojResolveAssemblyReference.cache
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\obj\Debug\MaintInfoBll.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoBll\obj\Debug\MaintInfoBll.pdb

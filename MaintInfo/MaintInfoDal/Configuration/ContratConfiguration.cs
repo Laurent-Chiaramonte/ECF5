@@ -29,13 +29,13 @@ namespace MaintInfoDal.Configuration
             Property(p => p.date_resiliation)
                 .HasColumnType("date")
                 .IsOptional();
-            ToTable("Contrat", "maintinfo");
+            ToTable("Contrat");
             #endregion
 
             #region Association
             HasRequired(p => p.leCentre)
                 .WithMany()
-                .HasForeignKey(p => p.idCentre);
+                .HasForeignKey(p => p.centreInformatiqueID);
             #endregion
         }
     }

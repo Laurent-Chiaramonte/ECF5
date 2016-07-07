@@ -23,16 +23,16 @@ namespace MaintInfoDal.Configuration
             Property(p => p.tel_centre)
                 .IsRequired()
                 .HasMaxLength(10);
-            ToTable("CentreInformatique", "maintinfo");
+            ToTable("CentreInformatique");
             #endregion
 
             #region Associations
             HasRequired(p => p.leClient)
                 .WithMany()
-                .HasForeignKey(p => p.idClient);
+                .HasForeignKey(p => p.clientID);
             HasRequired(p => p.leSecteur)
                 .WithMany()
-                .HasForeignKey(p => p.idSecteur);
+                .HasForeignKey(p => p.secteurID);
             #endregion
         }
     }

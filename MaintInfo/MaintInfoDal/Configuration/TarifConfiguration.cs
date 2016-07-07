@@ -18,7 +18,7 @@ namespace MaintInfoDal.Configuration
             Property(p => p.date_tarif)
                 .HasColumnType("date")
                 .IsRequired();
-            ToTable("Tarif", "maintinfo");
+            ToTable("Tarif");
             #endregion
         }
     }

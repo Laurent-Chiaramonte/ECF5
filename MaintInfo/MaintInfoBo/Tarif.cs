@@ -9,7 +9,7 @@ namespace MaintInfoBo
     public class Tarif
     {
         #region Propriétés
-        public int idTarif { get; set; }
+        public int tarifID { get; set; }
         public DateTime date_tarif { get; set; }
         public double montant_tarif { get; set; }
         #endregion
@@ -18,7 +18,7 @@ namespace MaintInfoBo
         public Tarif() { }
         public Tarif(int num, DateTime date, double mt)
         {
-            idTarif = num;
+            tarifID = num;
             date_tarif = date;
             montant_tarif = mt;
         }
@@ -29,7 +29,7 @@ namespace MaintInfoBo
         {
             if (obj is Tarif)
                 return
-                    ((Tarif)obj).idTarif.Equals(this.idTarif);
+                    ((Tarif)obj).tarifID.Equals(this.tarifID);
             else
                 return false;
         }

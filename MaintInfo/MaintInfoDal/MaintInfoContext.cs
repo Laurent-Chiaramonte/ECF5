@@ -22,7 +22,7 @@ namespace MaintInfoDal
         public DbSet<Modele> Modeles { get; set; }
         public DbSet<Secteur> Secteurs { get; set; }
         public DbSet<Tarif> Tarifs { get; set; }
-        public DbSet<TypeE> TypesE { get; set; }
+        public DbSet<TypeModele> TypeModeles { get; set; }
         #endregion
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -36,7 +36,7 @@ namespace MaintInfoDal
             modelBuilder.Configurations.Add(new ModeleConfiguration());
             modelBuilder.Configurations.Add(new SecteurConfiguration());
             modelBuilder.Configurations.Add(new TarifConfiguration());
-            modelBuilder.Configurations.Add(new TypeEConfiguration());
+            modelBuilder.Configurations.Add(new TypeModeleConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

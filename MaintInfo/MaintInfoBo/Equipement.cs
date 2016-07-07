@@ -9,12 +9,12 @@ namespace MaintInfoBo
     public class Equipement
     {
         #region Propriétés
-        public int idEquipement { get; set; }
-        public string designation_equip { get; set; }
+        public string equipementID { get; set; }
+        public int planification { get; set; }
         public Contrat leContrat { get; set; }
-        public int idContrat { get; set; }
+        public int contratID { get; set; }
         public Modele leModele { get; set; }
-        public int idModele { get; set; }
+        public int modeleID { get; set; }
 
         #endregion
 
@@ -27,7 +27,7 @@ namespace MaintInfoBo
         {
             if (obj is Equipement)
                 return
-                    ((Equipement)obj).idEquipement.Equals(this.idEquipement);
+                    ((Equipement)obj).equipementID.Equals(this.equipementID);
             else
                 return false;
         }

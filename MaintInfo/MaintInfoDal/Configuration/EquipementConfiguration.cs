@@ -13,20 +13,19 @@ namespace MaintInfoDal.Configuration
         public EquipementConfiguration() : base()
         {
             #region Mapping
-            Property(p => p.designation_equip)
-                .HasMaxLength(30)
+            //HasKey(p => p.equipementID);
+            Property(p => p.planification)
                 .IsRequired();
-            ToTable("Equipement", "maintinfo");
+            ToTable("Equipement");
             #endregion
 
             #region Association
             HasRequired(p => p.leContrat)
                 .WithMany()
-                .HasForeignKey(p => p.idContrat);
+                .HasForeignKey(p => p.contratID);
             HasRequired(p => p.leModele)
                 .WithMany()
-                .HasForeignKey(p => p.idModele);
-            ToTable("Equipement", "maintinfo");
+                .HasForeignKey(p => p.modeleID);
             #endregion
         }
     }

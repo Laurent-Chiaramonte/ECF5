@@ -26,7 +26,7 @@ namespace MaintInfoDal.Configuration
             Property(p => p.tel_client)
                 .IsRequired()
                 .HasMaxLength(10);
-            ToTable("Client", "maintinfo");
+            ToTable("Client");
             #endregion
 
             

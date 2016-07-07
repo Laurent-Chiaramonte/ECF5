@@ -9,12 +9,12 @@ namespace MaintInfoBo
     public class Modele
     {
         #region Propriétés
-        public int idModele { get; set; }
+        public int modeleID { get; set; }
         public string designation_modele { get; set; }
         public Tarif leTarif { get; set; }
-        public int idTarif { get; set; }
-        public Type leType { get; set; }
-        public int idType { get; set; }
+        public int tarifID { get; set; }
+        public TypeModele leType { get; set; }
+        public int typeModeleID { get; set; }
         #endregion
 
         #region Constructeurs
@@ -26,7 +26,7 @@ namespace MaintInfoBo
         {
             if (obj is Modele)
                 return
-                    ((Modele)obj).idModele.Equals(this.idModele);
+                    ((Modele)obj).modeleID.Equals(this.modeleID);
             else
                 return false;
         }

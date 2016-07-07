@@ -9,22 +9,22 @@ namespace MaintInfoBo
     public class CentreInformatique
     {
         #region Propriétés
-        public int centreID { get; set; }
+        public int centreInformatiqueID { get; set; }
         public string adresse_centre { get; set; }
         public string cp_centre { get; set; }
         public string ville_centre { get; set; }
         public string tel_centre { get; set; }
         public Client leClient { get; set; }
-        public int idClient { get; set; }
+        public int clientID { get; set; }
         public Secteur leSecteur { get; set; }
-        public int idSecteur { get; set; }
+        public int secteurID { get; set; }
         #endregion
 
         #region Constructeurs
         public CentreInformatique() { }
         public CentreInformatique(int num, string adresse, string cp, string ville, string tel, Client cli)
         {
-            centreID = num;
+            centreInformatiqueID = num;
             adresse_centre = adresse;
             cp_centre = cp;
             ville_centre = ville;
@@ -38,14 +38,15 @@ namespace MaintInfoBo
         {
             if (obj is CentreInformatique)
                 return
-                    ((CentreInformatique)obj).centreID.Equals(this.centreID);
+                    ((CentreInformatique)obj).centreInformatiqueID.Equals(this.centreInformatiqueID);
             else
                 return false;
         }
         public override string ToString()
         {
             return string.Format("Centre : {0}, Client : {1}, Adresse : {2}, Code Postal : {3}, Ville : {4},"+
-                "Téléphone : {5}", centreID, leClient.nom_client, adresse_centre, cp_centre, ville_centre, tel_centre);
+                "Téléphone : {5}", centreInformatiqueID, leClient.nom_client, adresse_centre, cp_centre,
+                ville_centre, tel_centre);
         }
         #endregion
     }

@@ -16,7 +16,7 @@ namespace MaintInfoDal.Configuration
             Property(p => p.libelleSecteur)
                 .IsRequired()
                 .HasMaxLength(30);
-            ToTable("Secteur", "maintinfo");
+            ToTable("Secteur");
             #endregion
         }
     }

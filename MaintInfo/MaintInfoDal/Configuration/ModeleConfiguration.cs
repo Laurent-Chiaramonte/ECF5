@@ -16,17 +16,16 @@ namespace MaintInfoDal.Configuration
             Property(p => p.designation_modele)
                 .IsRequired()
                 .HasMaxLength(30);
-            ToTable("Modele", "maintinfo");
+            ToTable("Modele");
             #endregion
 
             #region Association
             HasRequired(p => p.leTarif)
                 .WithMany()
-                .HasForeignKey(p => p.idTarif);
+                .HasForeignKey(p => p.tarifID);
             HasRequired(p => p.leType)
                 .WithMany()
-                .HasForeignKey(p => p.idType);
-            ToTable("Modele", "maintinfo");
+                .HasForeignKey(p => p.typeModeleID);
             #endregion
         }
     }

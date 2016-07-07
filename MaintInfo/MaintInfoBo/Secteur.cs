@@ -9,7 +9,7 @@ namespace MaintInfoBo
     public class Secteur
     {
         #region Propriétés
-        public int idSecteur { get; set; }
+        public int secteurID { get; set; }
         public string libelleSecteur { get; set; }
         #endregion
 
@@ -22,7 +22,7 @@ namespace MaintInfoBo
         {
             if (obj is Secteur)
                 return
-                    ((Secteur)obj).idSecteur.Equals(this.idSecteur);
+                    ((Secteur)obj).secteurID.Equals(this.secteurID);
             else
                 return false;
         }

@@ -40,7 +40,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CentreInformatiqueManager.cs" />
+    <Compile Include="ClientManager.cs" />
+    <Compile Include="ContratManager.cs" />
+    <Compile Include="EquipementManager.cs" />
+    <Compile Include="Exceptions\BllException.cs" />
+    <Compile Include="Exceptions\BllExceptionAfficheMessage.cs" />
+    <Compile Include="Exceptions\BllExceptionFinAppli.cs" />
+    <Compile Include="ModeleManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecteurManager.cs" />
+    <Compile Include="TarifManager.cs" />
+    <Compile Include="TypeModeleManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MaintInfoBo\MaintInfoBo.csproj">
+      <Project>{8AF3952F-4980-47C1-9201-852D5D7910A4}</Project>
+      <Name>MaintInfoBo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaintInfoDal\MaintInfoDal.csproj">
+      <Project>{39BB7BCA-2816-4EBB-9BFE-369932736D38}</Project>
+      <Name>MaintInfoDal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

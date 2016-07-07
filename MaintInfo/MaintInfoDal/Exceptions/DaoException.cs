@@ -8,9 +8,7 @@ namespace MaintInfoDal.Exceptions
 {
     class DaoException : Exception
     {
-        public DaoException() : base()
-        {
-        }
+        public DaoException() : base() { }
 
         public DaoException(string message)
             : base(message)

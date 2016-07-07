@@ -257,35 +257,40 @@ namespace MaintInfoDal
             // Centre 1
             db.Equipements.Add(new Equipement
             {
-                equipementID = "4255A56454F6",
+                equipementID = 1,
+                num_serie = "4255A56454F6",
                 planification = 4,
                 contratID = 1,
                 modeleID = 1
             });
             db.Equipements.Add(new Equipement
             {
-                equipementID = "4255A56454F7",
+                equipementID = 2,
+                num_serie = "4255A56454F7",
                 planification = 4,
                 contratID = 1,
                 modeleID = 1
             });
             db.Equipements.Add(new Equipement
             {
-                equipementID = "4255A56454F8",
+                equipementID = 3,
+                num_serie = "4255A56454F8",
                 planification = 4,
                 contratID = 1,
                 modeleID = 1
             });
             db.Equipements.Add(new Equipement
             {
-                equipementID = "4646574FDG154",
+                equipementID = 4,
+                num_serie = "4646574FDG154",
                 planification = 1,
                 contratID = 1,
                 modeleID = 8
             });
             db.Equipements.Add(new Equipement
             {
-                equipementID = "1854845DSZE15",
+                equipementID = 5,
+                num_serie = "1854845DSZE15",
                 planification = 4,
                 contratID = 1,
                 modeleID = 5
@@ -293,21 +298,24 @@ namespace MaintInfoDal
             // Centre 2
             db.Equipements.Add(new Equipement
             {
-                equipementID = "987464131DDZE1121",
+                equipementID = 6,
+                num_serie = "987464131DDZE1121",
                 planification = 2,
                 contratID = 2,
                 modeleID = 1
             });
             db.Equipements.Add(new Equipement
             {
-                equipementID = "464657487HYU4",
+                equipementID = 7,
+                num_serie = "464657487HYU4",
                 planification = 2,
                 contratID = 2,
                 modeleID = 1
             });
             db.Equipements.Add(new Equipement
             {
-                equipementID = "1KIL41541ZE15",
+                equipementID = 8,
+                num_serie = "1KIL41541ZE15",
                 planification = 4,
                 contratID = 2,
                 modeleID = 2
@@ -315,21 +323,24 @@ namespace MaintInfoDal
             // Centre 3
             db.Equipements.Add(new Equipement
             {
-                equipementID = "4665LO74FDG155",
+                equipementID = 9,
+                num_serie = "4665LO74FDG155",
                 planification = 2,
                 contratID = 3,
                 modeleID = 8
             });
             db.Equipements.Add(new Equipement
             {
-                equipementID = "4665LO74FDG154",
+                equipementID = 10,
+                num_serie = "4665LO74FDG154",
                 planification = 2,
                 contratID = 3,
                 modeleID = 8
             });
             db.Equipements.Add(new Equipement
             {
-                equipementID = "185545410SZE17",
+                equipementID = 11,
+                num_serie = "185545410SZE17",
                 planification = 4,
                 contratID = 3,
                 modeleID = 1

@@ -9,7 +9,8 @@ namespace MaintInfoBo
     public class Equipement
     {
         #region Propriétés
-        public string equipementID { get; set; }
+        public int equipementID { get; set; }
+        public string num_serie { get; set; }
         public int planification { get; set; }
         public Contrat leContrat { get; set; }
         public int contratID { get; set; }

@@ -13,7 +13,9 @@ namespace MaintInfoDal.Configuration
         public EquipementConfiguration() : base()
         {
             #region Mapping
-            //HasKey(p => p.equipementID);
+            Property(p => p.num_serie)
+                .IsRequired()
+                .HasMaxLength(30);
             Property(p => p.planification)
                 .IsRequired();
             ToTable("Equipement");

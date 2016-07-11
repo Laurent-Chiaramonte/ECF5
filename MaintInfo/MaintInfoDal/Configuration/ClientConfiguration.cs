@@ -13,6 +13,7 @@ namespace MaintInfoDal.Configuration
         public ClientConfiguration() : base()
         {
             #region Mapping
+            HasKey(p => p.clientID);
             Property(p => p.nom_client)
                 .IsRequired()
                 .HasMaxLength(30);

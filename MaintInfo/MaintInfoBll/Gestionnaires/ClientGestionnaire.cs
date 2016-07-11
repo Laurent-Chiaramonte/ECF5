@@ -10,7 +10,7 @@ namespace MaintInfoBll.Gestionnaires
 {
     public class ClientGestionnaire
     {
-        ClientManager clMngr;
+        private ClientManager clMngr;
 
         public ClientGestionnaire()
         {

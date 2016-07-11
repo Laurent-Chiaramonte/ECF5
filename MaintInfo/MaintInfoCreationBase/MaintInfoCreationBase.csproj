@@ -60,6 +60,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MaintInfoBll\MaintInfoBll.csproj">
+      <Project>{84013816-8E3B-4AB4-A6A4-D430AB2BC636}</Project>
+      <Name>MaintInfoBll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaintInfoBo\MaintInfoBo.csproj">
+      <Project>{8AF3952F-4980-47C1-9201-852D5D7910A4}</Project>
+      <Name>MaintInfoBo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MaintInfoDal\MaintInfoDal.csproj">
       <Project>{39BB7BCA-2816-4EBB-9BFE-369932736D38}</Project>
       <Name>MaintInfoDal</Name>

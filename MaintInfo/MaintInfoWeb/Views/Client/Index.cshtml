@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MaintInfoBo.Client>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Liste des clients</title>
+    <style type="text/css">
+        table { border-collapse: collapse; }
+        td, th { border: 1px solid black; }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Raison Sociale</th>
+            <th>Adresse</th>
+            <th>Code Postal</th>
+            <th>Ville</th>
+            <th>Téléphone</th>
+        </tr>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.clientID</td>
+                <td>@client.nom_client</td>
+                <td>@client.adresse_client</td>
+                <td>@client.cp_client</td>
+                <td>@client.ville_client</td>
+                <td>@client.tel_client</td>
+                <td>@Html.ActionLink("Modifier " + client.nom_client, "ModifierClient", new { id = client.clientID }) </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,4 +1,3 @@
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\obj\Debug\MaintInfoWeb.csprojResolveAssemblyReference.cache
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\ApplicationInsights.config
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\roslyn\csc.exe
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -64,5 +63,6 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\fr\System.Web.Razor.resources.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\fr\System.Web.WebPages.resources.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\fr\System.Web.WebPages.Deployment.resources.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\fr\System.Web.WebPages.Razor.resources.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\obj\Debug\MaintInfoWeb.csprojResolveAssemblyReference.cache
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\obj\Debug\MaintInfoWeb.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\obj\Debug\MaintInfoWeb.pdb

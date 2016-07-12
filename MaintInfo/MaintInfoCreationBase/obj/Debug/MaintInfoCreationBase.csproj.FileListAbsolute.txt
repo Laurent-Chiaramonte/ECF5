@@ -14,3 +14,5 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\EntityFramework.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\EntityFramework.SqlServer.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\obj\Debug\MaintInfoCreationBase.exe
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\obj\Debug\MaintInfoCreationBase.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\fr\EntityFramework.resources.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoCreationBase\bin\Debug\fr\EntityFramework.SqlServer.resources.dll

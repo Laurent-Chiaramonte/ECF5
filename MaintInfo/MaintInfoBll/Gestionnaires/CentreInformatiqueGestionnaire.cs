@@ -17,12 +17,11 @@ namespace MaintInfoBll.Gestionnaires
             ciMngr = new CentreInformatiqueManager();
         }
 
-        public bool ajouterCentreInformatique(CentreInformatique ci)
+        public void ajouterCentreInformatique(CentreInformatique ci)
         {
             try
             {
                 ciMngr.ajouterCentreInformatique(ci);
-                return true;
             }
             catch (Exception)
             {
@@ -31,12 +30,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool modifierCentreInformatique(CentreInformatique ci)
+        public void modifierCentreInformatique(CentreInformatique ci)
         {
             try
             {
                 ciMngr.modifierCentreInformatique(ci);
-                return true;
             }
             catch (Exception)
             {
@@ -45,12 +43,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool supprimerCentreInformatique(CentreInformatique ci)
+        public void supprimerCentreInformatique(CentreInformatique ci)
         {
             try
             {
                 ciMngr.supprimerCentreInformatique(ci);
-                return true;
             }
             catch (Exception)
             {

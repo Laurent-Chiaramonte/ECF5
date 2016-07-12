@@ -1,0 +1,57 @@
+﻿@model MaintInfoBo.Client
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" href="~/Content/Site.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <title>ModifierClient</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Modifier un client</legend>
+            <div>
+                @Html.LabelFor(model => model.clientID)
+                @Html.TextBoxFor(model => model.clientID)
+                @Html.ValidationMessageFor(model => model.clientID)
+            </div>
+            <div>
+                @Html.LabelFor(model => model.nom_client)
+                @Html.TextBoxFor(model => model.nom_client)
+                @Html.ValidationMessageFor(model => model.nom_client)
+            </div>
+            <div>
+                @Html.LabelFor(model => model.adresse_client)
+                @Html.TextBoxFor(model => model.adresse_client)
+                @Html.ValidationMessageFor(model => model.adresse_client)
+            </div>
+            <div>
+                @Html.LabelFor(model => model.cp_client)
+                @Html.TextBoxFor(model => model.cp_client)
+                @Html.ValidationMessageFor(model => model.cp_client)
+            </div>
+            <div>
+                @Html.LabelFor(model => model.ville_client)
+                @Html.TextBoxFor(model => model.ville_client)
+                @Html.ValidationMessageFor(model => model.ville_client)
+            </div>
+            <div>
+                @Html.LabelFor(model => model.tel_client)
+                @Html.TextBoxFor(model => model.tel_client)
+                @Html.ValidationMessageFor(model => model.tel_client)
+            </div>
+            <br />
+            <input type="submit" value="Modifier" />
+        </fieldset>
+    }
+</body>
+</html>

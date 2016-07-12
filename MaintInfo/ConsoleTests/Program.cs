@@ -1,6 +1,7 @@
 ﻿using MaintInfoBll;
 using MaintInfoBll.Gestionnaires;
 using MaintInfoBo;
+using MaintInfoDal.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +19,15 @@ namespace ConsoleTests
             Client c1 = new Client
             {
                 clientID = 3,
-                nom_client = "test",
+                nom_client = "test mod",
                 adresse_client = "34, avenue de corot",
                 cp_client = "13013",
                 ville_client = "Marseille",
                 tel_client = "0491609023"
             };
+            clig.modifierClient(c1);
 
+            Console.WriteLine();
             Console.WriteLine(clig.afficherTousLesClients());
 
             Console.ReadLine();

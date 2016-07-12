@@ -17,12 +17,11 @@ namespace MaintInfoBll.Gestionnaires
             clMngr = new ClientManager();
         }
 
-        public bool ajouterClient(Client cl)
+        public void ajouterClient(Client cl)
         {
             try
             {
                 clMngr.ajouterClient(cl);
-                return true;
             }
             catch (Exception)
             {
@@ -31,12 +30,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool modifierClient(Client cl)
+        public void modifierClient(Client cl)
         {
             try
             {
                 clMngr.modifierClient(cl);
-                return true;
             }
             catch (Exception)
             {
@@ -45,12 +43,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool supprimerClient(Client cl)
+        public void supprimerClient(Client cl)
         {
             try
             {
                 clMngr.supprimerClient(cl);
-                return true;
             }
             catch (Exception)
             {

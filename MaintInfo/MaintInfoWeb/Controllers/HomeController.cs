@@ -13,6 +13,14 @@ namespace MaintInfoWeb.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ActionName("Index")]
+
+        public ActionResult IndexPost()
+        {
+            return RedirectToAction("Index", "Client");
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

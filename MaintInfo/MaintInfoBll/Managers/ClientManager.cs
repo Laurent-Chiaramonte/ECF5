@@ -18,13 +18,12 @@ namespace MaintInfoBll
             this._clientRepository = new Repository<Client>();
         }
 
-        public bool ajouterClient(Client cli)
+        public void ajouterClient(Client cli)
         {
             try
             {
                 _clientRepository.Insert(cli);
                 _clientRepository.Save();
-                return true;
             }
             catch (Exception)
             {
@@ -32,13 +31,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool modifierClient(Client cli)
+        public void modifierClient(Client cli)
         {
             try
             {
                 _clientRepository.Update(cli);
                 _clientRepository.Save();
-                return true;
             }
             catch (Exception)
             {
@@ -46,13 +44,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool supprimerClient(Client cli)
+        public void supprimerClient(Client cli)
         {
             try
             {
                 _clientRepository.Delete(cli);
                 _clientRepository.Save();
-                return true;
             }
             catch (Exception)
             {

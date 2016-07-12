@@ -18,13 +18,12 @@ namespace MaintInfoBll
             this._centreInformatiqueRepository = new Repository<CentreInformatique>();
         }
 
-        public bool ajouterCentreInformatique(CentreInformatique cti)
+        public void ajouterCentreInformatique(CentreInformatique cti)
         {
             try
             {
                 _centreInformatiqueRepository.Insert(cti);
                 _centreInformatiqueRepository.Save();
-                return true;
             }
             catch (Exception)
             {
@@ -32,13 +31,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool modifierCentreInformatique(CentreInformatique cti)
+        public void modifierCentreInformatique(CentreInformatique cti)
         {
             try
             {
                 _centreInformatiqueRepository.Update(cti);
                 _centreInformatiqueRepository.Save();
-                return true;
             }
             catch (Exception)
             {
@@ -46,13 +44,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool supprimerCentreInformatique(CentreInformatique cti)
+        public void supprimerCentreInformatique(CentreInformatique cti)
         {
             try
             {
                 _centreInformatiqueRepository.Delete(cti);
                 _centreInformatiqueRepository.Save();
-                return true;
             }
             catch (Exception)
             {

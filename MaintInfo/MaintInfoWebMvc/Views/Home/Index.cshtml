@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>MaintInfo</h1>
+    <p class="lead">Service de maintenance des équipements vendus.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Afficher les clients</h2>
+        <p>
+            Afficher les clients permet :
+            - d'ajouter, modifier ou supprimer un client,
+            - d'ajouter, modifier ou supprimer un centre informatique,
+            - d'ajouter ou modifier un contrat.
+        </p>
+        @using (Html.BeginForm())
+        {
+            <input type="submit" value="Afficher" />
+        }
+        @*<p><a class="btn btn-default" href="/Client/Index.cshtml"> Afficher &raquo;</a></p>*@
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>

@@ -17,12 +17,11 @@ namespace MaintInfoBll.Gestionnaires
             ctMngr = new ContratManager();
         }
 
-        public bool ajouterContrat(Contrat ct)
+        public void ajouterContrat(Contrat ct)
         {
             try
             {
                 ctMngr.ajouterContrat(ct);
-                return true;
             }
             catch (Exception)
             {
@@ -31,7 +30,7 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool modifierContrat(Contrat ct)
+        public void modifierContrat(Contrat ct)
         {
             try
             {
@@ -52,7 +51,6 @@ namespace MaintInfoBll.Gestionnaires
                         ctMngr.modifierContrat(ct);
                         break;
                 }
-                return true;
             }
             catch (Exception)
             {
@@ -61,12 +59,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool suppressionContrat(Contrat ct)
+        public void suppressionContrat(Contrat ct)
         {
             try
             {
                 ctMngr.supprimerContrat(ct);
-                return true;
             }
             catch (Exception)
             {

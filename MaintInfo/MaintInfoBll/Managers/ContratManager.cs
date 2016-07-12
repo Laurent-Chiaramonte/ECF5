@@ -19,13 +19,12 @@ namespace MaintInfoBll
             this._contratRepository = new Repository<Contrat>();
         }
 
-        public bool ajouterContrat(Contrat ct)
+        public void ajouterContrat(Contrat ct)
         {
             try
             {
                 _contratRepository.Insert(ct);
                 _contratRepository.Save();
-                return true;
             }
             catch (Exception)
             {
@@ -34,13 +33,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool modifierContrat(Contrat ct)
+        public void modifierContrat(Contrat ct)
         {
             try
             {
                 _contratRepository.Update(ct);
                 _contratRepository.Save();
-                return true;
             }
             catch (Exception)
             {
@@ -49,13 +47,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool supprimerContrat(Contrat ct)
+        public void supprimerContrat(Contrat ct)
         {
             try
             {
                 _contratRepository.Delete(ct);
                 _contratRepository.Save();
-                return true;
             }
             catch (Exception)
             {

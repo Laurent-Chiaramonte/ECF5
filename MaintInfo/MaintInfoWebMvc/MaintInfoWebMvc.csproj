@@ -212,7 +212,6 @@
     <Content Include="Views\Client\CreerClient.cshtml" />
     <Content Include="Views\Shared\testd.cshtml" />
     <Content Include="Views\Shared\_AfficherCentreParID.cshtml" />
-    <Content Include="Views\Client\Indexp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

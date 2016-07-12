@@ -12,26 +12,19 @@ namespace MaintInfoWeb.Controllers
     public class ClientController : Controller
     {
         private ClientGestionnaire cliGes;
-        private IRepository<Client> _cliRepo;
         public ClientController()
         {
             cliGes = new ClientGestionnaire();
-            _cliRepo = new Repository<Client>();
         }
 
         // GET: Client
         public ActionResult Index()
         {
-            //IEnumerable<Client> listeDesClients = cliGes.afficherTousLesClients();
-            IEnumerable<Client> listeDesClients = _cliRepo.GetAll();
+            IEnumerable<Client> listeDesClients = cliGes.afficherTousLesClients();
             return View(listeDesClients);
         }
 
-        // GET: Client/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+        
 
         // GET: Client/Create
         public ActionResult Create()
@@ -65,23 +58,49 @@ namespace MaintInfoWeb.Controllers
         // GET: Client/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            try
+            {
+                Client client = cliGes.afficherClientParID(id);
+                if (client == null)
+                    return View("Error");
+                return View(client);
+            }
+            catch
+            {
+                return HttpNotFound();
+            }
         }
 
         // POST: Client/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Client client)
         {
             try
             {
-                // TODO: Add update logic here
-
+                if (!ModelState.IsValid)
+                    return View(client);
+                cliGes.modifierClient(client);
                 return RedirectToAction("Index");
             }
             catch
             {
                 return View();
             }
+        }
+
+        public ActionResult AfficherLesCentresDuClient(int id)
+        {
+            CentreInformatiqueGestionnaire cenInfoGes = new CentreInformatiqueGestionnaire();
+            IEnumerable<CentreInformatique> lstCentre = cenInfoGes.afficherTousLesCentresInformatique();
+            IEnumerable<CentreInformatique> lesCentres = lstCentre.Where(client => client.clientID == id).ToList();
+            return PartialView("_AfficherLesCentresDuClient", lesCentres);
+        }
+
+        #region Méthodes non utilisées
+        // GET: Client/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
         }
 
         // GET: Client/Delete/5
@@ -105,5 +124,7 @@ namespace MaintInfoWeb.Controllers
                 return View();
             }
         }
+
+        #endregion
     }
 }

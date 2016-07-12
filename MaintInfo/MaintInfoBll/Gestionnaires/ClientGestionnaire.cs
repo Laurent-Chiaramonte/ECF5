@@ -81,5 +81,10 @@ namespace MaintInfoBll.Gestionnaires
                 throw new BllGestionnaireExceptionAfficheMessage("Affichage impossible"); ;
             }
         }
+
+        public bool clientExiste(string nom)
+        {
+            return clMngr.clientExiste(nom);
+        }
     }
 }

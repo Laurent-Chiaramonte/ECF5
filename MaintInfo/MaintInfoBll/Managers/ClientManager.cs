@@ -80,5 +80,10 @@ namespace MaintInfoBll
                 throw new BllManagerExceptionAfficheMessage("Affichage impossible");
             }
         }
+
+        public bool clientExiste(string nom)
+        {
+            return _clientRepository.GetAll().Any(client => string.Compare(client.nom_client, nom, StringComparison.CurrentCultureIgnoreCase) == 0);
+        }
     }
 }

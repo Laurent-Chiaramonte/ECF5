@@ -23,11 +23,11 @@ namespace MaintInfoWebMvc.Controllers
             return View(listeDesClients);
         }
 
-        public ActionResult ModifierClient(int id)
+        public ActionResult ModifierClient(int? id)
         {
-            if (id != 0)
+            if (id.HasValue)
             {
-                Client client = cliGes.afficherClientParID(id);
+                Client client = cliGes.afficherClientParID(id.Value);
                 if (client == null)
                     return View("Error");
                 return View(client);
@@ -43,6 +43,29 @@ namespace MaintInfoWebMvc.Controllers
                 return View(client);
             cliGes.modifierClient(client);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult CreerClient()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreerClient(Client client)
+        {
+            if (cliGes.clientExiste(client.nom_client))
+            {
+                ModelState.AddModelError("Nom", "Ce nom de client existe déjà");
+                return View(client);
+            }
+            if (!ModelState.IsValid)
+                return View(client);
+            cliGes.ajouterClient(client);
+            return RedirectToAction("Index");
+        }
+        public ActionResult AfficherCentreInformatique(int id)
+        {
+            return RedirectToAction("Index", "CentreInformatique", id);
         }
     }
 }

@@ -25,10 +25,10 @@ namespace ConsoleTests
                 ville_client = "Marseille",
                 tel_client = "0491609023"
             };
-            clig.modifierClient(c1);
+            
 
-            Console.WriteLine();
-            Console.WriteLine(clig.afficherTousLesClients());
+            Console.WriteLine(clig.clientExiste("Panzani"));
+            //Console.WriteLine(clig.afficherTousLesClients());
 
             Console.ReadLine();
 

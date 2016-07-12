@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<MaintInfoBo.Client>
 @{
-    Layout = null;
+//Layout = null;
 }
 
 <!DOCTYPE html>
@@ -34,8 +34,12 @@
                 <td>@client.ville_client</td>
                 <td>@client.tel_client</td>
                 <td>@Html.ActionLink("Modifier " + client.nom_client, "ModifierClient", new { id = client.clientID }) </td>
+                <td>@Html.ActionLink("Afficher Centres informatique ", "AfficherCentreInformatique",  new { id = client.clientID }) </td>
             </tr>
         }
     </table>
+    <ul>
+        <li>@Html.ActionLink("Ajouter un client", "CreerClient", "Client")</li>
+    </ul>
 </body>
 </html>

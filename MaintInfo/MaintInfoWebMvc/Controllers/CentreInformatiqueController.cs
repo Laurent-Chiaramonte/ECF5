@@ -16,15 +16,13 @@ namespace MaintInfoWebMvc.Controllers
         {
             ceninfoGes = new CentreInformatiqueGestionnaire();
         }
-        public ActionResult Index(int? id)
+        
+        
+        public ActionResult AfficherCentreParID(int id)
         {
-            if (id.HasValue)
-            {
-                CentreInformatique leCentre = ceninfoGes.afficherCentreInformatiqueParID(id.Value);
-                return View(leCentre);
-            }
-            else
-                return HttpNotFound();
+            IEnumerable<CentreInformatique> lstCentre = ceninfoGes.afficherTousLesCentresInformatique();
+            IEnumerable<CentreInformatique> lesCentres = lstCentre.Where(client => client.clientID == id).ToList();
+            return PartialView("_AfficherCentreParID", lesCentres);
         }
     }
 }

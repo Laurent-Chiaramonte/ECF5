@@ -20,7 +20,6 @@ namespace MaintInfoWeb.Controllers
         {
             return RedirectToAction("Index", "Client");
         }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

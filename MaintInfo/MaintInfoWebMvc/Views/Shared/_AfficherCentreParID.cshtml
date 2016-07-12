@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MaintInfoBo.CentreInformatique>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.adresse_centre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cp_centre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ville_centre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel_centre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clientID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.secteurID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.adresse_centre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cp_centre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ville_centre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel_centre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clientID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.secteurID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.centreInformatiqueID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.centreInformatiqueID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.centreInformatiqueID })
+        </td>
+    </tr>
+}
+
+</table>
+@section Scripts { @Scripts.Render("~/bundles/jqueryval")}

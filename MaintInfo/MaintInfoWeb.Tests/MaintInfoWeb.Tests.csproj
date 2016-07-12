@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2FB96BB6-DDB5-465C-A9F5-31B3BE61E555}</ProjectGuid>
+    <ProjectGuid>{A020C2E0-A8A8-49F9-89A2-B14718AB09C2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MaintInfoWeb.Tests</RootNamespace>
@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MaintInfoWeb\MaintInfoWeb.csproj">
-      <Project>{509B91A4-506D-4058-B591-D104152AAAE6}</Project>
+      <Project>{4B014312-77DA-438C-BC25-AEB2DBC2BB60}</Project>
       <Name>MaintInfoWeb</Name>
     </ProjectReference>
   </ItemGroup>

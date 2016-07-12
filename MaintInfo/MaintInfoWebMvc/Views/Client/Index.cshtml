@@ -3,18 +3,18 @@
 //Layout = null;
 }
 
-<!DOCTYPE html>
+@*<!DOCTYPE html>
 
-<html>
-<head>
+<html>*@
+@*<head>
     <meta name="viewport" content="width=device-width" />
     <title>Liste des clients</title>
     <style type="text/css">
         table { border-collapse: collapse; } 
         td, th { border: 1px solid black; }
     </style>
-</head>
-<body>
+</head>*@
+@*<body>*@
     <table>
         <tr>
             <th>ID</th>
@@ -34,12 +34,15 @@
                 <td>@client.ville_client</td>
                 <td>@client.tel_client</td>
                 <td>@Html.ActionLink("Modifier " + client.nom_client, "ModifierClient", new { id = client.clientID }) </td>
-                <td>@Html.ActionLink("Afficher Centres informatique ", "AfficherCentreInformatique",  new { id = client.clientID }) </td>
+                <td>@Ajax.ActionLink("Afficher Centres informatique", "AfficherCentreParID", "CentreInformatique",
+                   new { id = client.clientID }, 
+                   new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })  </td>
             </tr>
         }
     </table>
     <ul>
         <li>@Html.ActionLink("Ajouter un client", "CreerClient", "Client")</li>
     </ul>
-</body>
-</html>
+    <div id="affct"></div>
+@*</body>
+</html>*@

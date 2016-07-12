@@ -1,41 +1,64 @@
 ﻿@model IEnumerable<MaintInfoBo.Client>
+
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
+<h2>Index</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Liste des clients</title>
-    <style type="text/css">
-        table { border-collapse: collapse; }
-        td, th { border: 1px solid black; }
-    </style>
-</head>
-<body>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Raison Sociale</th>
-            <th>Adresse</th>
-            <th>Code Postal</th>
-            <th>Ville</th>
-            <th>Téléphone</th>
-        </tr>
-        @foreach (var client in Model)
-        {
-            <tr>
-                <td>@client.clientID</td>
-                <td>@client.nom_client</td>
-                <td>@client.adresse_client</td>
-                <td>@client.cp_client</td>
-                <td>@client.ville_client</td>
-                <td>@client.tel_client</td>
-                <td>@Html.ActionLink("Modifier " + client.nom_client, "ModifierClient", new { id = client.clientID }) </td>
-            </tr>
-        }
-    </table>
-</body>
-</html>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nom_client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adresse_client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cp_client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ville_client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel_client)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nom_client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adresse_client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cp_client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ville_client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel_client)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.clientID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.clientID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.clientID })
+        </td>
+        <td>
+            @Ajax.ActionLink("Afficher Centres informatique", "AfficherCentreParID", "CentreInformatique",
+                   new { id = item.clientID },
+                   new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })
+    </td>
+
+    </tr>
+}
+
+</table>
+<div id="affct"></div>

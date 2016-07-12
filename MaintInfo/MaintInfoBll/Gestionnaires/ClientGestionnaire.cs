@@ -64,7 +64,6 @@ namespace MaintInfoBll.Gestionnaires
             }
             catch (Exception)
             {
-
                 throw new BllGestionnaireExceptionAfficheMessage("Affichage impossible"); ;
             }
         }

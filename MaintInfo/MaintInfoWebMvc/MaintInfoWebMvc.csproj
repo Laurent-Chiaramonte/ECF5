@@ -183,6 +183,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -208,11 +210,14 @@
     <Content Include="Views\Client\Index.cshtml" />
     <Content Include="Views\Client\ModifierClient.cshtml" />
     <Content Include="Views\Client\CreerClient.cshtml" />
-    <Content Include="Views\CentreInformatique\Index.cshtml" />
+    <Content Include="Views\Shared\testd.cshtml" />
+    <Content Include="Views\Shared\_AfficherCentreParID.cshtml" />
+    <Content Include="Views\Client\Indexp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\CentreInformatique\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

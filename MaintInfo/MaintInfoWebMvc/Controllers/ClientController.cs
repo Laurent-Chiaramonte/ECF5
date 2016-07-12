@@ -63,9 +63,9 @@ namespace MaintInfoWebMvc.Controllers
             cliGes.ajouterClient(client);
             return RedirectToAction("Index");
         }
-        public ActionResult AfficherCentreInformatique(int id)
-        {
-            return RedirectToAction("Index", "CentreInformatique", id);
-        }
+        //public ActionResult AfficherCentreInformatique(int id)
+        //{
+        //    return RedirectToAction("Index", "CentreInformatique", id);
+        //}
     }
 }

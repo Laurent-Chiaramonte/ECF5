@@ -8,63 +8,63 @@ using System.Web.Mvc;
 
 namespace MaintInfoWeb.Controllers
 {
-    public class CentreInformatiqueController : Controller
+    public class ContratController : Controller
     {
-        private CentreInformatiqueGestionnaire ceninfoGes;
+        private ContratGestionnaire conGes;
 
-        public CentreInformatiqueController()
+        public ContratController()
         {
-            ceninfoGes = new CentreInformatiqueGestionnaire();
+            conGes = new ContratGestionnaire();
         }
 
-        // GET: CentreInformatique
+        // GET: Contrat
         public ActionResult Index()
         {
-            IEnumerable<CentreInformatique> listeDesCentres = ceninfoGes.afficherTousLesCentresInformatique();
-            return View(listeDesCentres);
+            IEnumerable<Contrat> listeDesContrats = conGes.afficherTousLesContrats();
+            return View(listeDesContrats);
         }
 
 
-        // GET: CentreInformatique/Create
+        // GET: Contrat/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CentreInformatique/Create
+        // POST: Contrat/Create
         [HttpPost]
-        public ActionResult Create(CentreInformatique centreInfo)
+        public ActionResult Create(Contrat contrat)
         {
-            if (ceninfoGes.centreInformatiqueExiste(centreInfo.adresse_centre))
+            if (conGes.contratExiste(contrat.centreInformatiqueID))
             {
-                ModelState.AddModelError("Adresse", "Un centre existe déjà à cette adresse");
-                return View(centreInfo);
+                ModelState.AddModelError("Contrat", "Ce centre informatique a déjà un contrat");
+                return View(contrat);
             }
             if (!ModelState.IsValid)
             {
-                return View(centreInfo);
+                return View(contrat);
             }
             try
             {
-                ceninfoGes.ajouterCentreInformatique(centreInfo);
+                conGes.ajouterContrat(contrat);
                 return RedirectToAction("Index");
             }
             catch
             {
-                ModelState.AddModelError("AddCentreInformatique", "L'ajout a échoué");
+                ModelState.AddModelError("AddContrat", "L'ajout a échoué");
                 return View();
             }
         }
 
-        // GET: CentreInformatique/Edit/5
+        // GET: Contrat/Edit/5
         public ActionResult Edit(int id)
         {
             try
             {
-                CentreInformatique centreInfo = ceninfoGes.afficherCentreInformatiqueParID(id);
-                if (centreInfo == null)
+                Contrat contrat = conGes.afficherContratParID(id);
+                if (contrat == null)
                     return View("Error");
-                return View(centreInfo);
+                return View(contrat);
             }
             catch
             {
@@ -73,37 +73,38 @@ namespace MaintInfoWeb.Controllers
             }
         }
 
-        // POST: CentreInformatique/Edit/5
+        // POST: Contrat/Edit/5
         [HttpPost]
-        public ActionResult Edit(CentreInformatique centreInfo)
+        public ActionResult Edit(Contrat contrat)
         {
             try
             {
                 if (!ModelState.IsValid)
-                    return View(centreInfo);
-                ceninfoGes.modifierCentreInformatique(centreInfo);
+                    return View(contrat);
+                conGes.modifierContrat(contrat);
                 return RedirectToAction("Index");
             }
             catch
             {
+
                 return View();
             }
         }
 
 
-        // GET: CentreInformatique/Details/5
+        // GET: Contrat/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: CentreInformatique/Delete/5
+        // GET: Contrat/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: CentreInformatique/Delete/5
+        // POST: Contrat/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MaintInfoBo.Equipement>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.num_serie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.planification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contratID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modeleID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.num_serie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.planification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contratID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modeleID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.equipementID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.equipementID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.equipementID })
+        </td>
+    </tr>
+}
+
+</table>

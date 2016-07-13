@@ -18,13 +18,12 @@ namespace MaintInfoBll
             this._modeleRepository = new Repository<Modele>();
         }
 
-        public bool ajouterModele(Modele mod)
+        public void ajouterModele(Modele mod)
         {
             try
             {
                 _modeleRepository.Insert(mod);
-                _modeleRepository.Save();
-                return true;
+                _modeleRepository.Save(); 
             }
             catch (Exception)
             {
@@ -32,13 +31,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool modifierModele(Modele mod)
+        public void modifierModele(Modele mod)
         {
             try
             {
                 _modeleRepository.Update(mod);
-                _modeleRepository.Save();
-                return true;
+                _modeleRepository.Save(); 
             }
             catch (Exception)
             {
@@ -46,13 +44,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool supprimerModele(Modele mod)
+        public void supprimerModele(Modele mod)
         {
             try
             {
                 _modeleRepository.Delete(mod);
-                _modeleRepository.Save();
-                return true;
+                _modeleRepository.Save(); 
             }
             catch (Exception)
             {
@@ -82,6 +79,12 @@ namespace MaintInfoBll
             {
                 throw new BllManagerExceptionAfficheMessage("Affichage impossible");
             }
+        }
+
+        public bool modeleExiste(string des)
+        {
+            return _modeleRepository.GetAll().Any(modele => string.Compare(modele.designation_modele, des,
+                StringComparison.CurrentCultureIgnoreCase) == 0);
         }
     }
 }

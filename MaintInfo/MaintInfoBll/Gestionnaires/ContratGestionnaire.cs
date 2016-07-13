@@ -97,5 +97,10 @@ namespace MaintInfoBll.Gestionnaires
                 throw new BllGestionnaireExceptionAfficheMessage("Affichage impossible"); ;
             }
         }
+
+        public bool contratExiste(int idCenInfo)
+        {
+            return ctMngr.contratExiste(idCenInfo);
+        }
     }
 }

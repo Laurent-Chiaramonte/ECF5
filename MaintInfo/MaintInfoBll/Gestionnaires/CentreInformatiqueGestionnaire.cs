@@ -81,5 +81,10 @@ namespace MaintInfoBll.Gestionnaires
                 throw new BllGestionnaireExceptionAfficheMessage("Affichage impossible"); ;
             }
         }
+
+        public bool centreInformatiqueExiste(string adresse)
+        {
+            return ciMngr.centreInformatiqueExiste(adresse);
+        }
     }
 }

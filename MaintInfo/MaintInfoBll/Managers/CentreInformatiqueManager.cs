@@ -80,5 +80,10 @@ namespace MaintInfoBll
                 throw new BllManagerExceptionAfficheMessage("Affichage impossible");
             }
         }
+
+        public bool centreInformatiqueExiste(string adresse)
+        {
+            return _centreInformatiqueRepository.GetAll().Any(client => string.Compare(client.adresse_centre, adresse, StringComparison.CurrentCultureIgnoreCase) == 0);
+        }
     }
 }

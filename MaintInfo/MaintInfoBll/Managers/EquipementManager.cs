@@ -19,13 +19,12 @@ namespace MaintInfoBll
             this._equipementRepository = new Repository<Equipement>();
         }
 
-        public bool ajouterEquipement(Equipement eqt)
+        public void ajouterEquipement(Equipement eqt)
         {
             try
             {
                 _equipementRepository.Insert(eqt);
                 _equipementRepository.Save();
-                return true;
             }
             catch (Exception)
             {
@@ -33,13 +32,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool modifierEquipement(Equipement eqt)
+        public void modifierEquipement(Equipement eqt)
         {
             try
             {
                 _equipementRepository.Update(eqt);
                 _equipementRepository.Save();
-                return true;
             }
             catch (Exception)
             {
@@ -47,13 +45,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool supprimerEquipement(Equipement eqt)
+        public void supprimerEquipement(Equipement eqt)
         {
             try
             {
                 _equipementRepository.Delete(eqt);
                 _equipementRepository.Save();
-                return true;
             }
             catch (Exception)
             {
@@ -83,6 +80,12 @@ namespace MaintInfoBll
             {
                 throw new BllManagerExceptionAfficheMessage("Affichage impossible");
             }
+        }
+
+        public bool equipementExiste(string nserie)
+        {
+            return _equipementRepository.GetAll().Any(equip => 
+                string.Compare(equip.num_serie, nserie, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
     }
 }

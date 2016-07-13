@@ -19,13 +19,12 @@ namespace MaintInfoBll
             this._typeModeleRepository = new Repository<TypeModele>();
         }
 
-        public bool ajouterTypeModele(TypeModele tm)
+        public void ajouterTypeModele(TypeModele tm)
         {
             try
             {
                 _typeModeleRepository.Insert(tm);
-                _typeModeleRepository.Save();
-                return true;
+                _typeModeleRepository.Save(); 
             }
             catch (Exception)
             {
@@ -34,13 +33,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool modifierTypeModele(TypeModele tm)
+        public void modifierTypeModele(TypeModele tm)
         {
             try
             {
                 _typeModeleRepository.Update(tm);
-                _typeModeleRepository.Save();
-                return true;
+                _typeModeleRepository.Save(); 
             }
             catch (Exception)
             {
@@ -49,13 +47,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool supprimerTypeModele(TypeModele tm)
+        public void supprimerTypeModele(TypeModele tm)
         {
             try
             {
                 _typeModeleRepository.Delete(tm);
-                _typeModeleRepository.Save();
-                return true;
+                _typeModeleRepository.Save(); 
             }
             catch (Exception)
             {
@@ -88,6 +85,12 @@ namespace MaintInfoBll
 
                 throw new BllManagerExceptionAfficheMessage("Affichage impossible");
             }
+        }
+
+        public bool typeModeleExiste(string des)
+        {
+            return _typeModeleRepository.GetAll().Any(typemode => string.Compare(typemode.designation_type, des,
+                StringComparison.CurrentCultureIgnoreCase) == 0);
         }
     }
 }

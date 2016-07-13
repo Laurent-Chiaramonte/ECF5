@@ -19,13 +19,12 @@ namespace MaintInfoBll
             this._secteurRepository = new Repository<Secteur>();
         }
 
-        public bool ajouterSecteur(Secteur sct)
+        public void ajouterSecteur(Secteur sct)
         {
             try
             {
                 _secteurRepository.Insert(sct);
-                _secteurRepository.Save();
-                return true;
+                _secteurRepository.Save(); 
             }
             catch (Exception)
             {
@@ -33,13 +32,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool modifierSecteur(Secteur sct)
+        public void modifierSecteur(Secteur sct)
         {
             try
             {
                 _secteurRepository.Update(sct);
-                _secteurRepository.Save();
-                return true;
+                _secteurRepository.Save(); 
             }
             catch (Exception)
             {
@@ -47,13 +45,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool supprimerSecteur(Secteur sct)
+        public void supprimerSecteur(Secteur sct)
         {
             try
             {
                 _secteurRepository.Delete(sct);
-                _secteurRepository.Save();
-                return true;
+                _secteurRepository.Save(); 
             }
             catch (Exception)
             {
@@ -83,6 +80,12 @@ namespace MaintInfoBll
             {
                 throw new BllManagerExceptionAfficheMessage("Affichage impossible");
             }
+        }
+
+        public bool secteurExiste(string lib)
+        {
+            return _secteurRepository.GetAll().Any(secteur => string.Compare(secteur.libelleSecteur, lib,
+                StringComparison.CurrentCultureIgnoreCase) == 0);
         }
 
     }

@@ -18,12 +18,11 @@ namespace MaintInfoBll.Gestionnaires
             etMngr = new EquipementManager();
         }
 
-        public bool ajouterEquipement(Equipement et)
+        public void ajouterEquipement(Equipement et)
         {
             try
             {
                 etMngr.ajouterEquipement(et);
-                return true;
             }
             catch (Exception)
             {
@@ -31,12 +30,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool modifierEquipement(Equipement et)
+        public void modifierEquipement(Equipement et)
         {
             try
             {
                 etMngr.modifierEquipement(et);
-                return true;
             }
             catch (Exception)
             {
@@ -45,12 +43,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool supprimerEquipement(Equipement et)
+        public void supprimerEquipement(Equipement et)
         {
             try
             {
                 etMngr.supprimerEquipement(et);
-                return true;
             }
             catch (Exception)
             {
@@ -83,6 +80,11 @@ namespace MaintInfoBll.Gestionnaires
 
                 throw new BllGestionnaireExceptionAfficheMessage("Affichage impossible"); ;
             }
+        }
+
+        public bool equipementExiste(string nserie)
+        {
+            return etMngr.equipementExiste(nserie);
         }
     }
 }

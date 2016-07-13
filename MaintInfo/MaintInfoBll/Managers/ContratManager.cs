@@ -86,5 +86,12 @@ namespace MaintInfoBll
                 throw new BllManagerExceptionAfficheMessage("Affichage impossible");
             }
         }
+
+        public bool contratExiste(int idCenInfo)
+        {
+            return _contratRepository.GetAll().Any(contrat =>
+                string.Compare(contrat.centreInformatiqueID.ToString(), idCenInfo.ToString(),
+                StringComparison.CurrentCultureIgnoreCase) == 0);
+        }
     }
 }

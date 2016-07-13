@@ -17,12 +17,11 @@ namespace MaintInfoBll.Gestionnaires
             stMngr = new SecteurManager();
         }
 
-        public bool ajouterSecteur(Secteur st)
+        public void ajouterSecteur(Secteur st)
         {
             try
             {
-                stMngr.ajouterSecteur(st);
-                return true;
+                stMngr.ajouterSecteur(st); 
             }
             catch (Exception)
             {
@@ -31,12 +30,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool modifierSecteur(Secteur st)
+        public void modifierSecteur(Secteur st)
         {
             try
             {
-                stMngr.modifierSecteur(st);
-                return true;
+                stMngr.modifierSecteur(st); 
             }
             catch (Exception)
             {
@@ -45,12 +43,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool supprimerSecteur(Secteur st)
+        public void supprimerSecteur(Secteur st)
         {
             try
             {
-                stMngr.supprimerSecteur(st);
-                return true;
+                stMngr.supprimerSecteur(st); 
             }
             catch (Exception)
             {
@@ -72,7 +69,7 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public Secteur afficherLeSecteurParID(int id)
+        public Secteur afficherSecteurParID(int id)
         {
             try
             {
@@ -83,6 +80,11 @@ namespace MaintInfoBll.Gestionnaires
 
                 throw new BllGestionnaireExceptionAfficheMessage("Affichage impossible");
             }
+        }
+
+        public bool secteurExiste(string lib)
+        {
+            return stMngr.secteurExiste(lib);
         }
     }
 }

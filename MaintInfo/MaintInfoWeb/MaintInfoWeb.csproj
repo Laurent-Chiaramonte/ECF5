@@ -130,7 +130,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CentreInformatiqueController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\ContratController.cs" />
+    <Compile Include="Controllers\EquipementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ModeleController.cs" />
+    <Compile Include="Controllers\SecteurController.cs" />
+    <Compile Include="Controllers\TarifController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -178,6 +183,24 @@
     <Content Include="Views\Client\Edit.cshtml" />
     <Content Include="Views\Client\_AfficherLesCentresDuClient.cshtml" />
     <Content Include="Views\CentreInformatique\Create.cshtml" />
+    <Content Include="Views\CentreInformatique\Index.cshtml" />
+    <Content Include="Views\CentreInformatique\Edit.cshtml" />
+    <Content Include="Views\Contrat\Create.cshtml" />
+    <Content Include="Views\Contrat\Edit.cshtml" />
+    <Content Include="Views\Contrat\Index.cshtml" />
+    <Content Include="Views\Equipement\Index.cshtml" />
+    <Content Include="Views\Equipement\Create.cshtml" />
+    <Content Include="Views\Equipement\Edit.cshtml" />
+    <Content Include="Views\Equipement\Delete.cshtml" />
+    <Content Include="Views\Modele\Index.cshtml" />
+    <Content Include="Views\Modele\Create.cshtml" />
+    <Content Include="Views\Modele\Edit.cshtml" />
+    <Content Include="Views\Modele\Delete.cshtml" />
+    <Content Include="Views\Secteur\Index.cshtml" />
+    <Content Include="Views\Secteur\Create.cshtml" />
+    <Content Include="Views\Secteur\Edit.cshtml" />
+    <Content Include="Views\Tarif\Index.cshtml" />
+    <Content Include="Views\Tarif\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

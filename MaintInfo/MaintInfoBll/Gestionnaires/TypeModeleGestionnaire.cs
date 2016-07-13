@@ -17,12 +17,11 @@ namespace MaintInfoBll.Gestionnaires
             tmMngr = new TypeModeleManager();
         }
 
-        public bool ajouterTypeModele(TypeModele tm)
+        public void ajouterTypeModele(TypeModele tm)
         {
             try
             {
-                tmMngr.ajouterTypeModele(tm);
-                return true;
+                tmMngr.ajouterTypeModele(tm); 
             }
             catch (Exception)
             {
@@ -31,12 +30,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool modifierTypeModele(TypeModele tm)
+        public void modifierTypeModele(TypeModele tm)
         {
             try
             {
-                tmMngr.modifierTypeModele(tm);
-                return true;
+                tmMngr.modifierTypeModele(tm); 
             }
             catch (Exception)
             {
@@ -45,12 +43,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool supprimerTypeModele(TypeModele tm)
+        public void supprimerTypeModele(TypeModele tm)
         {
             try
             {
-                tmMngr.supprimerTypeModele(tm);
-                return true;
+                tmMngr.supprimerTypeModele(tm); 
             }
             catch (Exception)
             {
@@ -83,6 +80,11 @@ namespace MaintInfoBll.Gestionnaires
 
                 throw new BllGestionnaireExceptionAfficheMessage("Affichage impossible");
             }
+        }
+
+        public bool typeModeleExiste(string des)
+        {
+            return tmMngr.typeModeleExiste(des);
         }
     }
 }

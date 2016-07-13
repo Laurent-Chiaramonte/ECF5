@@ -19,13 +19,12 @@ namespace MaintInfoBll
             this._tarifRepository = new Repository<Tarif>();
         }
 
-        public bool ajouterTarif(Tarif tf)
+        public void ajouterTarif(Tarif tf)
         {
             try
             {
                 _tarifRepository.Insert(tf);
-                _tarifRepository.Save();
-                return true;
+                _tarifRepository.Save(); 
             }
             catch (Exception)
             {
@@ -33,13 +32,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool modifierTarif(Tarif tf)
+        public void modifierTarif(Tarif tf)
         {
             try
             {
                 _tarifRepository.Update(tf);
-                _tarifRepository.Save();
-                return true;
+                _tarifRepository.Save(); 
             }
             catch (Exception)
             {
@@ -48,13 +46,12 @@ namespace MaintInfoBll
             }
         }
 
-        public bool supprimerTarif(Tarif tf)
+        public void supprimerTarif(Tarif tf)
         {
             try
             {
                 _tarifRepository.Delete(tf);
-                _tarifRepository.Save();
-                return true;
+                _tarifRepository.Save(); 
             }
             catch (Exception)
             {

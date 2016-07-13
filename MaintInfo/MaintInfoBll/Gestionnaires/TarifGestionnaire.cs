@@ -18,12 +18,11 @@ namespace MaintInfoBll.Gestionnaires
             trMngr = new TarifManager();
         }
 
-        public bool ajouterTarif(Tarif tr)
+        public void ajouterTarif(Tarif tr)
         {
             try
             {
-                trMngr.ajouterTarif(tr);
-                return true;
+                trMngr.ajouterTarif(tr); 
             }
             catch (Exception)
             {
@@ -32,12 +31,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool modifierTarif(Tarif tr)
+        public void modifierTarif(Tarif tr)
         {
             try
             {
-                trMngr.modifierTarif(tr);
-                return true;
+                trMngr.modifierTarif(tr); 
             }
             catch (Exception)
             {
@@ -46,12 +44,11 @@ namespace MaintInfoBll.Gestionnaires
             }
         }
 
-        public bool supprimerTarif(Tarif tr)
+        public void supprimerTarif(Tarif tr)
         {
             try
             {
-                trMngr.supprimerTarif(tr);
-                return true;
+                trMngr.supprimerTarif(tr); 
             }
             catch (Exception)
             {

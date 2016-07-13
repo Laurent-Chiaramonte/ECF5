@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MaintInfoDal.Repository
 {
-    public interface IRepository<TEntity> where TEntity : class 
+    public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
         IEnumerable<TEntity> GetAll();
         TEntity GetSingleById(int Id);

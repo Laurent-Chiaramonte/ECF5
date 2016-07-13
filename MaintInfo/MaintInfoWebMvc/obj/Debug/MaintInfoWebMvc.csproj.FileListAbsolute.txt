@@ -15,8 +15,11 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoWebMvc.dll.config
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoWebMvc.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoWebMvc.pdb
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\Antlr3.Runtime.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\EntityFramework.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\EntityFramework.SqlServer.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoBll.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoBo.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoDal.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\Microsoft.AI.Agent.Intercept.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\Microsoft.AI.DependencyCollector.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -35,10 +38,11 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\System.Web.WebPages.Deployment.d
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\System.Web.WebPages.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\System.Web.WebPages.Razor.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\WebGrease.dll
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoDal.dll
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\EntityFramework.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoBll.pdb
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoBo.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoDal.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\EntityFramework.xml
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\EntityFramework.SqlServer.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\Microsoft.AI.DependencyCollector.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\Microsoft.AI.ServerTelemetryChannel.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\Microsoft.AI.Web.xml
@@ -54,8 +58,8 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\System.Web.WebPages.Deployment.x
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\System.Web.WebPages.Razor.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\Antlr3.Runtime.pdb
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\Newtonsoft.Json.xml
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\MaintInfoDal.pdb
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\EntityFramework.xml
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\fr\EntityFramework.resources.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\fr\EntityFramework.SqlServer.resources.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\fr\System.Web.Helpers.resources.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\fr\System.Web.Mvc.resources.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\fr\System.Web.Optimization.resources.dll
@@ -66,7 +70,3 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\fr\System.Web.WebPages.Razor.res
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\obj\Debug\MaintInfoWebMvc.csprojResolveAssemblyReference.cache
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\obj\Debug\MaintInfoWebMvc.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\obj\Debug\MaintInfoWebMvc.pdb
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\EntityFramework.SqlServer.dll
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\EntityFramework.SqlServer.xml
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\fr\EntityFramework.resources.dll
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWebMvc\bin\fr\EntityFramework.SqlServer.resources.dll

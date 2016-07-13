@@ -49,6 +49,9 @@ namespace MaintInfoDal.Repository
             context.SaveChanges();
         }
 
-
+        public void Dispose()
+        {
+            context.Dispose();
+        }
     }
 }

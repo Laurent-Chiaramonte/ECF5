@@ -7,8 +7,8 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\bin\Debug\MaintInfoBo.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\bin\Debug\MaintInfoBo.pdb
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\bin\Debug\EntityFramework.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\bin\Debug\EntityFramework.SqlServer.xml
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\bin\Debug\fr\EntityFramework.resources.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\obj\Debug\MaintInfoDal.csprojResolveAssemblyReference.cache
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\obj\Debug\MaintInfoDal.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\obj\Debug\MaintInfoDal.pdb
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\bin\Debug\fr\EntityFramework.resources.dll
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\bin\Debug\fr\EntityFramework.SqlServer.resources.dll

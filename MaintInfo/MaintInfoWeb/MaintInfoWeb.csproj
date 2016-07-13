@@ -176,12 +176,12 @@
     <Content Include="Views\Client\Index.cshtml" />
     <Content Include="Views\Client\Create.cshtml" />
     <Content Include="Views\Client\Edit.cshtml" />
-    <Content Include="Views\Shared\_AfficherLesCentresDuClient.cshtml" />
+    <Content Include="Views\Client\_AfficherLesCentresDuClient.cshtml" />
+    <Content Include="Views\CentreInformatique\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\CentreInformatique\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

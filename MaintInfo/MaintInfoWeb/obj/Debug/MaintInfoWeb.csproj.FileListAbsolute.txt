@@ -18,6 +18,7 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\EntityFramework.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\EntityFramework.SqlServer.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\MaintInfoBll.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\MaintInfoBo.dll
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\MaintInfoDal.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\Microsoft.Web.Infrastructure.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\Newtonsoft.Json.dll
@@ -29,9 +30,9 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\System.Web.WebPages.Deployment.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\System.Web.WebPages.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\System.Web.WebPages.Razor.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\WebGrease.dll
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\MaintInfoDal.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\MaintInfoBll.pdb
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\MaintInfoBo.pdb
+E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\MaintInfoDal.pdb
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\EntityFramework.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\EntityFramework.SqlServer.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
@@ -44,7 +45,6 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\System.Web.WebPages.Deployment.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\System.Web.WebPages.Razor.xml
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\Antlr3.Runtime.pdb
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\Newtonsoft.Json.xml
-E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\MaintInfoDal.pdb
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\fr\EntityFramework.resources.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\fr\EntityFramework.SqlServer.resources.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoWeb\bin\fr\System.Web.Helpers.resources.dll

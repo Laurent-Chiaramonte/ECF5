@@ -88,7 +88,9 @@ namespace MaintInfoWeb.Controllers
             }
         }
 
-        public ActionResult AfficherLesCentresDuClient(int id)
+
+        // GET: Client/Details/5
+        public ActionResult Details(int id)
         {
             CentreInformatiqueGestionnaire cenInfoGes = new CentreInformatiqueGestionnaire();
             IEnumerable<CentreInformatique> lstCentre = cenInfoGes.afficherTousLesCentresInformatique();
@@ -97,11 +99,7 @@ namespace MaintInfoWeb.Controllers
         }
 
         #region Méthodes non utilisées
-        // GET: Client/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+
 
         // GET: Client/Delete/5
         public ActionResult Delete(int id)

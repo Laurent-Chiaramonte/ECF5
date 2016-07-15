@@ -2,27 +2,27 @@
 
 <h3>Liste des centres informatiques du client : </h3>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Créer nouveau centre informatique", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.adresse_centre)
+            @Html.DisplayName("Adresse")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cp_centre)
+            @Html.DisplayName("Code postal")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ville_centre)
+            @Html.DisplayName("Ville")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tel_centre)
+            @Html.DisplayName("Téléphone")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.clientID)
+            @Html.DisplayName("ClientID")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.secteurID)
+            @Html.DisplayName("SecteurID")
         </th>
         <th></th>
     </tr>
@@ -56,3 +56,7 @@
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Annuler", "Index")
+</div>

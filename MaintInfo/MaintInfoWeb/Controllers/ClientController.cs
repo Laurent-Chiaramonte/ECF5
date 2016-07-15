@@ -29,7 +29,7 @@ namespace MaintInfoWeb.Controllers
         // GET: Client/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView("_create");
         }
 
         // POST: Client/Create
@@ -63,7 +63,7 @@ namespace MaintInfoWeb.Controllers
                 Client client = cliGes.afficherClientParID(id);
                 if (client == null)
                     return View("Error");
-                return View(client);
+                return PartialView("_edit", client);
             }
             catch
             {

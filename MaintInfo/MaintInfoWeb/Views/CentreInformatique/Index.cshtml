@@ -4,30 +4,31 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Liste des centres informatique :</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Ajax.ActionLink("Créer nouveau centre informatique", "Create",
+        new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.adresse_centre)
+            @Html.DisplayName("Adresse")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cp_centre)
+            @Html.DisplayName("Code postal")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ville_centre)
+            @Html.DisplayName("Ville")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tel_centre)
+            @Html.DisplayName("Téléphone")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.clientID)
+            @Html.DisplayName("ClientID")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.secteurID)
+            @Html.DisplayName("SecteurID")
         </th>
         <th></th>
     </tr>
@@ -53,11 +54,12 @@
             @Html.DisplayFor(modelItem => item.secteurID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.centreInformatiqueID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.centreInformatiqueID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.centreInformatiqueID })
+            @Ajax.ActionLink("Modifier", "Edit",
+                new { id = item.centreInformatiqueID },
+                new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })
         </td>
     </tr>
 }
 
 </table>
+<div id="affct"></div>

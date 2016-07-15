@@ -28,7 +28,7 @@ namespace MaintInfoWeb.Controllers
         // GET: CentreInformatique/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView("_create");
         }
 
         // POST: CentreInformatique/Create
@@ -64,7 +64,7 @@ namespace MaintInfoWeb.Controllers
                 CentreInformatique centreInfo = ceninfoGes.afficherCentreInformatiqueParID(id);
                 if (centreInfo == null)
                     return View("Error");
-                return View(centreInfo);
+                return PartialView("_edit", centreInfo);
             }
             catch
             {

@@ -4,27 +4,28 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Liste des clients :</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Ajax.ActionLink("Créer nouveau client", "Create", 
+        new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nom_client)
+            @Html.DisplayName("Raison sociale")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.adresse_client)
+            @Html.DisplayName("Adresse")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cp_client)
+            @Html.DisplayName("Code postal")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ville_client)
+            @Html.DisplayName("Ville")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tel_client)
+            @Html.DisplayName("Téléphone")
         </th>
         <th></th>
     </tr>
@@ -47,15 +48,15 @@
             @Html.DisplayFor(modelItem => item.tel_client)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.clientID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.clientID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.clientID }) |
+            @Ajax.ActionLink("Modifier", "Edit", 
+                new { id=item.clientID },
+                new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace }) |
+
             @Ajax.ActionLink("Afficher Centres informatique", "Details", 
-                   new { id = item.clientID },
-                   new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })
+                new { id = item.clientID },
+                new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })
         </td>
     </tr>
-}
-    
+}   
 </table>
 <div id="affct"></div>

@@ -180,12 +180,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Client\Index.cshtml" />
-    <Content Include="Views\Client\Create.cshtml" />
-    <Content Include="Views\Client\Edit.cshtml" />
-    <Content Include="Views\Client\_AfficherLesCentresDuClient.cshtml" />
-    <Content Include="Views\CentreInformatique\Create.cshtml" />
     <Content Include="Views\CentreInformatique\Index.cshtml" />
-    <Content Include="Views\CentreInformatique\Edit.cshtml" />
     <Content Include="Views\Contrat\Create.cshtml" />
     <Content Include="Views\Contrat\Edit.cshtml" />
     <Content Include="Views\Contrat\Index.cshtml" />
@@ -206,7 +201,11 @@
     <Content Include="Views\TypeModele\Index.cshtml" />
     <Content Include="Views\TypeModele\Create.cshtml" />
     <Content Include="Views\TypeModele\Edit.cshtml" />
-    <Content Include="Views\Shared\_afficherCentresDuClient.cshtml" />
+    <Content Include="Views\Client\_afficherCentresDuClient.cshtml" />
+    <Content Include="Views\Client\_edit.cshtml" />
+    <Content Include="Views\Client\_create.cshtml" />
+    <Content Include="Views\CentreInformatique\_create.cshtml" />
+    <Content Include="Views\CentreInformatique\_edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

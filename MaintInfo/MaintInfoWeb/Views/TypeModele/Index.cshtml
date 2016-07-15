@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MaintInfoBo.TypeModele>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.designation_type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.designation_type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.typeModeleID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.typeModeleID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.typeModeleID })
+        </td>
+    </tr>
+}
+
+</table>

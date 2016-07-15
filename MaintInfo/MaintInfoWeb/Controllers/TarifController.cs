@@ -72,12 +72,15 @@ namespace MaintInfoWeb.Controllers
 
         // POST: Tarif/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Tarif tarif)
         {
             try
             {
-                // TODO: Add update logic here
-
+                if (!ModelState.IsValid)
+                {
+                    return View(tarif);
+                }
+                tarGes.modifierTarif(tarif);
                 return RedirectToAction("Index");
             }
             catch

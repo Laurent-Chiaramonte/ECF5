@@ -49,13 +49,13 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.clientID }) |
             @Html.ActionLink("Details", "Details", new { id=item.clientID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.clientID })
-            @*@Ajax.ActionLink("Afficher Centres informatique", "AfficherLesCentresDuClient", 
+            @Html.ActionLink("Delete", "Delete", new { id = item.clientID }) |
+            @Ajax.ActionLink("Afficher Centres informatique", "Details", 
                    new { id = item.clientID },
-                   new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })*@
+                   new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })
         </td>
     </tr>
 }
-
+    
 </table>
 <div id="affct"></div>

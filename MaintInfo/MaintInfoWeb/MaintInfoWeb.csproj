@@ -136,6 +136,7 @@
     <Compile Include="Controllers\ModeleController.cs" />
     <Compile Include="Controllers\SecteurController.cs" />
     <Compile Include="Controllers\TarifController.cs" />
+    <Compile Include="Controllers\TypeModeleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,6 +202,11 @@
     <Content Include="Views\Secteur\Edit.cshtml" />
     <Content Include="Views\Tarif\Index.cshtml" />
     <Content Include="Views\Tarif\Create.cshtml" />
+    <Content Include="Views\Tarif\Edit.cshtml" />
+    <Content Include="Views\TypeModele\Index.cshtml" />
+    <Content Include="Views\TypeModele\Create.cshtml" />
+    <Content Include="Views\TypeModele\Edit.cshtml" />
+    <Content Include="Views\Shared\_afficherCentresDuClient.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,3 +12,17 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\bin\Debug\fr\EntityFramework.SqlServer.
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\obj\Debug\MaintInfoDal.csprojResolveAssemblyReference.cache
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\obj\Debug\MaintInfoDal.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoDal\obj\Debug\MaintInfoDal.pdb
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\MaintInfoDal.dll.config
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\MaintInfoDal.dll
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\MaintInfoDal.pdb
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\EntityFramework.dll
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\MaintInfoBo.dll
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\MaintInfoBo.pdb
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\EntityFramework.xml
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\obj\Debug\MaintInfoDal.csprojResolveAssemblyReference.cache
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\obj\Debug\MaintInfoDal.dll
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoDal\obj\Debug\MaintInfoDal.pdb

@@ -95,7 +95,7 @@ namespace MaintInfoWeb.Controllers
             CentreInformatiqueGestionnaire cenInfoGes = new CentreInformatiqueGestionnaire();
             IEnumerable<CentreInformatique> lstCentre = cenInfoGes.afficherTousLesCentresInformatique();
             IEnumerable<CentreInformatique> lesCentres = lstCentre.Where(client => client.clientID == id).ToList();
-            return PartialView("_AfficherLesCentresDuClient", lesCentres);
+            return PartialView("_afficherCentresDuClient", lesCentres);
         }
 
         #region Méthodes non utilisées

@@ -3,3 +3,8 @@ E:\NewGitHub\ECF5\MaintInfo\MaintInfoBo\bin\Debug\MaintInfoBo.pdb
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoBo\obj\Debug\MaintInfoBo.csprojResolveAssemblyReference.cache
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoBo\obj\Debug\MaintInfoBo.dll
 E:\NewGitHub\ECF5\MaintInfo\MaintInfoBo\obj\Debug\MaintInfoBo.pdb
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoBo\bin\Debug\MaintInfoBo.dll
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoBo\bin\Debug\MaintInfoBo.pdb
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoBo\obj\Debug\MaintInfoBo.csprojResolveAssemblyReference.cache
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoBo\obj\Debug\MaintInfoBo.dll
+C:\Users\HP-Lolo\Source\Repos\ECF5\MaintInfo\MaintInfoBo\obj\Debug\MaintInfoBo.pdb

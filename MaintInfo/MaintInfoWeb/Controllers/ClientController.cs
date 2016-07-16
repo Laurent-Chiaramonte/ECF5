@@ -93,9 +93,17 @@ namespace MaintInfoWeb.Controllers
         public ActionResult Details(int id)
         {
             CentreInformatiqueGestionnaire cenInfoGes = new CentreInformatiqueGestionnaire();
-            IEnumerable<CentreInformatique> lstCentre = cenInfoGes.afficherTousLesCentresInformatique();
-            IEnumerable<CentreInformatique> lesCentres = lstCentre.Where(client => client.clientID == id).ToList();
+            IEnumerable<CentreInformatique> lstCentres = cenInfoGes.afficherTousLesCentresInformatique();
+            IEnumerable<CentreInformatique> lesCentres = lstCentres.Where(client => client.clientID == id).ToList();
             return PartialView("_afficherCentresDuClient", lesCentres);
+        }
+
+        public ActionResult ContratDuClient(int id)
+        {
+            ContratGestionnaire conGes = new ContratGestionnaire();
+            IEnumerable<Contrat> lstContrats = conGes.afficherTousLesContrats();
+            Contrat leContrat = lstContrats.FirstOrDefault(contrat => contrat.centreInformatiqueID == id);
+            return PartialView("_afficherContratDuCentre", leContrat);
         }
 
         #region Méthodes non utilisées

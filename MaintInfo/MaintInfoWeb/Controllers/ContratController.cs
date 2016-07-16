@@ -28,7 +28,7 @@ namespace MaintInfoWeb.Controllers
         // GET: Contrat/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView("_create");
         }
 
         // POST: Contrat/Create
@@ -64,7 +64,7 @@ namespace MaintInfoWeb.Controllers
                 Contrat contrat = conGes.afficherContratParID(id);
                 if (contrat == null)
                     return View("Error");
-                return View(contrat);
+                return PartialView("_edit", contrat);
             }
             catch
             {

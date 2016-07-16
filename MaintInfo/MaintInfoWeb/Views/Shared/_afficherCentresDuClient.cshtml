@@ -48,8 +48,9 @@
             @Html.DisplayFor(modelItem => item.secteurID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.centreInformatiqueID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.centreInformatiqueID }) |
+            @Ajax.ActionLink("Afficher le contrat", "ContratDuClient",
+                new { id = item.centreInformatiqueID },
+                new AjaxOptions { UpdateTargetId = "affct2", InsertionMode = InsertionMode.Replace }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.centreInformatiqueID })
         </td>
     </tr>
@@ -60,3 +61,4 @@
 <div>
     @Html.ActionLink("Annuler", "Index")
 </div>
+<div id="affct2"></div>

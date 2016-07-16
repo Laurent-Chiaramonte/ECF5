@@ -4,33 +4,34 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Liste des contrats :</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Ajax.ActionLink("Créer nouveau contrat", "Create",
+        new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.montant_contrat)
+            @Html.DisplayName("Montant")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.statut)
+            @Html.DisplayName("Statut")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.commentaire)
+            @Html.DisplayName("Commentaire")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date_creation)
+            @Html.DisplayName("Date de creation")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date_echeance)
+            @Html.DisplayName("Date d'échéance")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date_resiliation)
+            @Html.DisplayName("Date de résiliation")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.centreInformatiqueID)
+            @Html.DisplayName("ID du centre informatique")
         </th>
         <th></th>
     </tr>
@@ -59,7 +60,9 @@
             @Html.DisplayFor(modelItem => item.centreInformatiqueID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.contratID }) |
+            @Ajax.ActionLink("Modifier", "Edit",
+                new { id = item.centreInformatiqueID },
+                new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })|
             @Html.ActionLink("Details", "Details", new { id=item.contratID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.contratID })
         </td>
@@ -67,3 +70,4 @@
 }
 
 </table>
+<div id="affct"></div>

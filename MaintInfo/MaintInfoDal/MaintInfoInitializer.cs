@@ -142,56 +142,56 @@ namespace MaintInfoDal
             Tarif tf1 = new Tarif
             {
                 tarifID = 1,
-                date_tarif = new DateTime(01 / 01 / 2016),
+                date_tarif = new DateTime(2016, 01, 01),
                 montant_tarif = 499.99
             };
             db.Tarifs.Add(tf1);
             Tarif tf2 = new Tarif
             {
                 tarifID = 2,
-                date_tarif = new DateTime(01 / 01 / 2016),
+                date_tarif = new DateTime(2016, 01, 01),
                 montant_tarif = 799.99
             };
             db.Tarifs.Add(tf2);
             Tarif tf3 = new Tarif
             {
                 tarifID = 3,
-                date_tarif = new DateTime(01 / 01 / 2016),
+                date_tarif = new DateTime(2016, 01, 01),
                 montant_tarif = 999.99
             };
             db.Tarifs.Add(tf3);
             Tarif tf4 = new Tarif
             {
                 tarifID = 4,
-                date_tarif = new DateTime(01 / 01 / 2016),
+                date_tarif = new DateTime(2016, 01, 01),
                 montant_tarif = 549.99
             };
             db.Tarifs.Add(tf4);
             Tarif tf5 = new Tarif
             {
                 tarifID = 5,
-                date_tarif = new DateTime(01 / 01 / 2016),
+                date_tarif = new DateTime(2016, 01, 01),
                 montant_tarif = 949.99
             };
             db.Tarifs.Add(tf5);
             Tarif tf6 = new Tarif
             {
                 tarifID = 6,
-                date_tarif = new DateTime(01 / 01 / 2016),
+                date_tarif = new DateTime(2016, 01, 01),
                 montant_tarif = 399
             };
             db.Tarifs.Add(tf6);
             Tarif tf7 = new Tarif
             {
                 tarifID = 7,
-                date_tarif = new DateTime(01 / 01 / 2016),
+                date_tarif = new DateTime(2016, 01, 01),
                 montant_tarif = 439
             };
             db.Tarifs.Add(tf7);
             Tarif tf8 = new Tarif
             {
                 tarifID = 8,
-                date_tarif = new DateTime(01 / 01 / 2016),
+                date_tarif = new DateTime(2016, 01, 01),
                 montant_tarif = 919
             };
             db.Tarifs.Add(tf8);

@@ -16,7 +16,6 @@ namespace MaintInfoBo
         public int contratID { get; set; }
         public Modele leModele { get; set; }
         public int modeleID { get; set; }
-
         #endregion
 
         #region Constructeurs

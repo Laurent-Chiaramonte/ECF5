@@ -18,19 +18,19 @@ namespace MaintInfoBo
         public int clientID { get; set; }
         public Secteur leSecteur { get; set; }
         public int secteurID { get; set; }
-        public virtual Contrat leContrat { get; set; }
         #endregion
 
         #region Constructeurs
         public CentreInformatique() { }
-        public CentreInformatique(int num, string adresse, string cp, string ville, string tel, Client cli)
+        public CentreInformatique(int num, string adresse, string cp, string ville, string tel, int cli, int sec)
         {
             centreInformatiqueID = num;
             adresse_centre = adresse;
             cp_centre = cp;
             ville_centre = ville;
             tel_centre = tel;
-            leClient = cli;
+            clientID = cli;
+            secteurID = sec;
         }
         #endregion
 

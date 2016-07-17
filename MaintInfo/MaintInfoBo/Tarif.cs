@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ namespace MaintInfoBo
     {
         #region Propriétés
         public int tarifID { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime date_tarif { get; set; }
         public double montant_tarif { get; set; }
         #endregion
@@ -36,7 +39,7 @@ namespace MaintInfoBo
 
         public override string ToString()
         {
-            return base.ToString();
+            return String.Format("Date du tarif : {0}, Montant : {1} ", date_tarif.ToShortDateString(), montant_tarif);
         }
         #endregion
     }

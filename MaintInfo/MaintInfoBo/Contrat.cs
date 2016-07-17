@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +14,15 @@ namespace MaintInfoBo
         public double montant_contrat { get; set; }
         public int statut { get; set; }
         public string commentaire { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime date_creation { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime date_echeance { get; set; }
-        public DateTime date_resiliation { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime? date_resiliation { get; set; }
         public CentreInformatique leCentre { get; set; }
         public int centreInformatiqueID { get; set; }
         #endregion
@@ -23,7 +30,7 @@ namespace MaintInfoBo
         #region Constructeurs
         public Contrat() { }
         public Contrat(int numct, double mtct, int stat, string comm, DateTime crea, DateTime ech, DateTime res,
-            CentreInformatique ci)
+            int ci)
         {
             contratID = numct;
             montant_contrat = mtct;
@@ -31,7 +38,7 @@ namespace MaintInfoBo
             date_creation = crea;
             date_echeance = ech;
             date_resiliation = res;
-            leCentre = ci;
+            centreInformatiqueID = ci;
         }
         #endregion
 
@@ -64,10 +71,13 @@ namespace MaintInfoBo
                         leCentre.centreInformatiqueID, date_creation, date_echeance, st);
                     break;
                 case 3:
-                    st = "Résilié";
-                    tost = String.Format("Contrat : {0}, Client : {1}, Centre : {2}, Date de résiliation : {3}, "+ 
-                        "Statut : {4}", contratID, leCentre.leClient.nom_client, leCentre.centreInformatiqueID,
-                        date_resiliation, st);
+                    if (date_resiliation.HasValue)
+                    {
+                        st = "Résilié";
+                        tost = String.Format("Contrat : {0}, Client : {1}, Centre : {2}, Date de résiliation : {3}, " +
+                            "Statut : {4}", contratID, leCentre.leClient.nom_client, leCentre.centreInformatiqueID,
+                            date_resiliation, st);
+                    }
                     break;
             }
             return tost;

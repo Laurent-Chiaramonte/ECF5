@@ -101,19 +101,25 @@ namespace MaintInfoWeb.Controllers
             IEnumerable<CentreInformatique> lstCentres = cenInfoGes.afficherTousLesCentresInformatique();
             IEnumerable<CentreInformatique> lesCentres = lstCentres.Where(client => client.clientID == id).ToList();
 
+            // Mettre les clients dans le ViewBag
+            IEnumerable<Client> lstClients = cliGes.afficherTousLesClients();
+            TempData["lstClients"] = lstClients;
+            ViewBag.LesClients = new SelectList(lstClients, "clientID", "nom_client");
+
             // Mettre le client dans le ViewBag
             Client leClient = cliGes.afficherClientParID(id);
             TempData["leClient"] = leClient;
             ViewBag.LeClient = leClient.nom_client;
+            ViewBag.ClientID = leClient.clientID;
 
-            // Mettre les secteur dans le ViewBag
+            // Mettre les secteurs dans le ViewBag
             IEnumerable<Secteur> lstSecteurs = secGes.afficherTousLesSecteurs();
             TempData["lstSecteurs"] = lstSecteurs;
             ViewBag.LesSecteurs = new SelectList(lstSecteurs, "secteurID", "libelleSecteur");
 
             if (lesCentres.Count() == 0)
             {
-                return PartialView("_createCentreDuClient");
+                return PartialView("_creerCentreDuClient");
             }
             else
             {
@@ -136,7 +142,17 @@ namespace MaintInfoWeb.Controllers
             } 
         }
 
+        public ActionResult CreerCentreduClient(int id)
+        {
+            IEnumerable<Client> lstClients = cliGes.afficherTousLesClients();
+            TempData["lstClients"] = lstClients;
+            ViewBag.LesClients = new SelectList(lstClients, "clientID", "nom_client");
+            IEnumerable<Secteur> lstSecteurs = secGes.afficherTousLesSecteurs();
+            TempData["lstSecteurs"] = lstSecteurs;
+            ViewBag.LesSecteurs = new SelectList(lstSecteurs, "secteurID", "libelleSecteur");
 
+            return PartialView("_creerCentreduClient");
+        }
 
         #region Méthodes non utilisées
 

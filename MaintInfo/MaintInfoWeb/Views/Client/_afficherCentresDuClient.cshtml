@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<MaintInfoBo.CentreInformatique>
 
-<h3>Liste des centres informatiques du client : </h3>
+<h3>Liste des centres informatiques du client : @ViewBag.leClient</h3>
 <p>
-    @Ajax.ActionLink("Créer nouveau centre informatique", "Create", "CentreInformatique",
+    @Ajax.ActionLink("Créer nouveau centre informatique", "CreerCentreduClient",
+        new { id = ViewBag.clientID },
         new AjaxOptions { UpdateTargetId = "affct2", InsertionMode = InsertionMode.Replace })
 </p>
 <table class="table">

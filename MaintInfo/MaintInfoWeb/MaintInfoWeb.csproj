@@ -206,6 +206,7 @@
     <Content Include="Views\CentreInformatique\_edit.cshtml" />
     <Content Include="Views\Contrat\_edit.cshtml" />
     <Content Include="Views\Client\_afficherContratDuCentre.cshtml" />
+    <Content Include="Views\Client\_creerContratDuCentre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

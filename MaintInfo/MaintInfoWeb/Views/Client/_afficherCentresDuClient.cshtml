@@ -2,7 +2,8 @@
 
 <h3>Liste des centres informatiques du client : </h3>
 <p>
-    @Html.ActionLink("Créer nouveau centre informatique", "Create")
+    @Ajax.ActionLink("Créer nouveau centre informatique", "Create", "CentreInformatique",
+        new AjaxOptions { UpdateTargetId = "affct2", InsertionMode = InsertionMode.Replace })
 </p>
 <table class="table">
     <tr>

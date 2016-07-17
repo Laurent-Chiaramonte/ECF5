@@ -103,7 +103,14 @@ namespace MaintInfoWeb.Controllers
             ContratGestionnaire conGes = new ContratGestionnaire();
             IEnumerable<Contrat> lstContrats = conGes.afficherTousLesContrats();
             Contrat leContrat = lstContrats.FirstOrDefault(contrat => contrat.centreInformatiqueID == id);
-            return PartialView("_afficherContratDuCentre", leContrat);
+            if (leContrat == null)
+            {
+                return PartialView("_creerContratDuCentre");
+            }
+            else
+            {
+                return PartialView("_afficherContratDuCentre", leContrat);
+            } 
         }
 
         #region Méthodes non utilisées

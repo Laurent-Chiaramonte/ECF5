@@ -12,9 +12,14 @@ namespace MaintInfoWeb.Controllers
     public class ClientController : Controller
     {
         private ClientGestionnaire cliGes;
+        private CentreInformatiqueGestionnaire cenInfoGes;
+        private SecteurGestionnaire secGes;
+
         public ClientController()
         {
             cliGes = new ClientGestionnaire();
+            cenInfoGes = new CentreInformatiqueGestionnaire();
+            secGes = new SecteurGestionnaire();
         }
 
         // GET: Client
@@ -92,10 +97,28 @@ namespace MaintInfoWeb.Controllers
         // GET: Client/Details/5
         public ActionResult Details(int id)
         {
-            CentreInformatiqueGestionnaire cenInfoGes = new CentreInformatiqueGestionnaire();
+            // Recupérer les centres informatiques du client
             IEnumerable<CentreInformatique> lstCentres = cenInfoGes.afficherTousLesCentresInformatique();
             IEnumerable<CentreInformatique> lesCentres = lstCentres.Where(client => client.clientID == id).ToList();
-            return PartialView("_afficherCentresDuClient", lesCentres);
+
+            // Mettre le client dans le ViewBag
+            Client leClient = cliGes.afficherClientParID(id);
+            TempData["leClient"] = leClient;
+            ViewBag.LeClient = leClient.nom_client;
+
+            // Mettre les secteur dans le ViewBag
+            IEnumerable<Secteur> lstSecteurs = secGes.afficherTousLesSecteurs();
+            TempData["lstSecteurs"] = lstSecteurs;
+            ViewBag.LesSecteurs = new SelectList(lstSecteurs, "secteurID", "libelleSecteur");
+
+            if (lesCentres.Count() == 0)
+            {
+                return PartialView("_createCentreDuClient");
+            }
+            else
+            {
+                return PartialView("_afficherCentresDuClient", lesCentres);
+            }
         }
 
         public ActionResult ContratDuClient(int id)
@@ -112,6 +135,8 @@ namespace MaintInfoWeb.Controllers
                 return PartialView("_afficherContratDuCentre", leContrat);
             } 
         }
+
+
 
         #region Méthodes non utilisées
 

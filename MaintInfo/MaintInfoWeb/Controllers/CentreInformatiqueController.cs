@@ -11,10 +11,14 @@ namespace MaintInfoWeb.Controllers
     public class CentreInformatiqueController : Controller
     {
         private CentreInformatiqueGestionnaire ceninfoGes;
+        private ClientGestionnaire cliGes;
+        private SecteurGestionnaire secGes;
 
         public CentreInformatiqueController()
         {
             ceninfoGes = new CentreInformatiqueGestionnaire();
+            cliGes = new ClientGestionnaire();
+            secGes = new SecteurGestionnaire();
         }
 
         // GET: CentreInformatique
@@ -28,6 +32,12 @@ namespace MaintInfoWeb.Controllers
         // GET: CentreInformatique/Create
         public ActionResult Create()
         {
+            IEnumerable<Client> lstClients = cliGes.afficherTousLesClients();
+            TempData["lstClients"] = lstClients;
+            ViewBag.LesClients = new SelectList(lstClients, "clientID", "nom_client");
+            IEnumerable<Secteur> lstSecteurs = secGes.afficherTousLesSecteurs();
+            TempData["lstSecteurs"] = lstSecteurs;
+            ViewBag.LesSecteurs = new SelectList(lstSecteurs, "secteurID", "libelleSecteur");
             return PartialView("_create");
         }
 

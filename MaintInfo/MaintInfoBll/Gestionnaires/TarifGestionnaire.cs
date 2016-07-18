@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using MaintInfoBll.Gestionnaires.GestionnaireExceptions;
 using MaintInfoBo;
+using MaintInfoDal.Dao;
 
 namespace MaintInfoBll.Gestionnaires
 {
@@ -15,7 +16,7 @@ namespace MaintInfoBll.Gestionnaires
 
         public TarifGestionnaire()
         {
-            trMngr = new TarifManager();
+            trMngr = new TarifManager(new TarifDao());
         }
 
         public void ajouterTarif(Tarif tr)

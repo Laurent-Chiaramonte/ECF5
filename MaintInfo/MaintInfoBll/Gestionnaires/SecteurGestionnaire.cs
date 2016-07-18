@@ -1,5 +1,6 @@
 ﻿using MaintInfoBll.Gestionnaires.GestionnaireExceptions;
 using MaintInfoBo;
+using MaintInfoDal.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace MaintInfoBll.Gestionnaires
 
         public SecteurGestionnaire()
         {
-            stMngr = new SecteurManager();
+            stMngr = new SecteurManager(new SecteurDao());
         }
 
         public void ajouterSecteur(Secteur st)

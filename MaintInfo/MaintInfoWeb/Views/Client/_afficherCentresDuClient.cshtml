@@ -21,10 +21,10 @@
             @Html.DisplayName("Téléphone")
         </th>
         <th>
-            @Html.DisplayName("ClientID")
+            @Html.DisplayName("Client")
         </th>
         <th>
-            @Html.DisplayName("SecteurID")
+            @Html.DisplayName("Secteur")
         </th>
         <th></th>
     </tr>
@@ -44,16 +44,15 @@
             @Html.DisplayFor(modelItem => item.tel_centre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.clientID)
+            @Html.DisplayFor(modelItem => item.leClient.nom_client)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.secteurID)
+            @Html.DisplayFor(modelItem => item.leSecteur.libelleSecteur)
         </td>
         <td>
             @Ajax.ActionLink("Afficher le contrat", "ContratDuClient",
                 new { id = item.centreInformatiqueID },
-                new AjaxOptions { UpdateTargetId = "affct2", InsertionMode = InsertionMode.Replace }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.centreInformatiqueID })
+                new AjaxOptions { UpdateTargetId = "affct2", InsertionMode = InsertionMode.Replace })
         </td>
     </tr>
 }

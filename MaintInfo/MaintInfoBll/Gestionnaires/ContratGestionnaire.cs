@@ -1,5 +1,6 @@
 ﻿using MaintInfoBll.Gestionnaires.GestionnaireExceptions;
 using MaintInfoBo;
+using MaintInfoDal.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace MaintInfoBll.Gestionnaires
 
         public ContratGestionnaire()
         {
-            ctMngr = new ContratManager();
+            ctMngr = new ContratManager(new ContratDao());
         }
 
         public void ajouterContrat(Contrat ct)

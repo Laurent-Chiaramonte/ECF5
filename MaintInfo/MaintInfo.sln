@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintInfoCreationBase", "Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTests", "ConsoleTests\ConsoleTests.csproj", "{45D5E2D3-4EB5-4314-A99C-5DE8769EF3BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintInfoWebMvc", "MaintInfoWebMvc\MaintInfoWebMvc.csproj", "{0D065887-5CF0-4202-9F2D-9A3BD0C9773A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintInfoWeb", "MaintInfoWeb\MaintInfoWeb.csproj", "{4B014312-77DA-438C-BC25-AEB2DBC2BB60}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintInfoWeb.Tests", "MaintInfoWeb.Tests\MaintInfoWeb.Tests.csproj", "{A020C2E0-A8A8-49F9-89A2-B14718AB09C2}"
@@ -45,10 +43,6 @@ Global
 		{45D5E2D3-4EB5-4314-A99C-5DE8769EF3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45D5E2D3-4EB5-4314-A99C-5DE8769EF3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45D5E2D3-4EB5-4314-A99C-5DE8769EF3BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D065887-5CF0-4202-9F2D-9A3BD0C9773A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D065887-5CF0-4202-9F2D-9A3BD0C9773A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D065887-5CF0-4202-9F2D-9A3BD0C9773A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D065887-5CF0-4202-9F2D-9A3BD0C9773A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4B014312-77DA-438C-BC25-AEB2DBC2BB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4B014312-77DA-438C-BC25-AEB2DBC2BB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B014312-77DA-438C-BC25-AEB2DBC2BB60}.Release|Any CPU.ActiveCfg = Release|Any CPU

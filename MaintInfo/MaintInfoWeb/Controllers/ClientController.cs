@@ -4,6 +4,7 @@ using MaintInfoDal.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -127,8 +128,67 @@ namespace MaintInfoWeb.Controllers
             }
         }
 
+        // GET: Centre/Create
+        public ActionResult CreerCentreduClient(int id)
+        {
+            // Mettre le client dans le ViewBag
+            Client leClient = cliGes.afficherClientParID(id);
+            TempData["leClient"] = leClient;
+            ViewBag.LeClient = leClient.nom_client;
+            ViewBag.ClientID = leClient.clientID;
+            // Liste clients
+            IEnumerable<Client> lstClients = cliGes.afficherTousLesClients();
+            TempData["lstClients"] = lstClients;
+            ViewBag.LesClients = new SelectList(lstClients, "clientID", "nom_client", leClient.clientID);
+            // Liste secteurs
+            IEnumerable<Secteur> lstSecteurs = secGes.afficherTousLesSecteurs();
+            TempData["lstSecteurs"] = lstSecteurs;
+            ViewBag.LesSecteurs = new SelectList(lstSecteurs, "secteurID", "libelleSecteur");
+
+            return PartialView("_creerCentreduClient");
+        }
+
+        // POST: Centre/Create
+        [HttpPost]
+        public ActionResult CreerCentreduClient(CentreInformatique centreInfo)
+        {
+            if (cenInfoGes.centreInformatiqueExiste(centreInfo.adresse_centre))
+            {
+                ModelState.AddModelError("Adresse", "Un centre existe déjà à cette adresse");
+                return View(centreInfo);
+            }
+            if (!ModelState.IsValid)
+            {
+                return View(centreInfo);
+            }
+            try
+            {
+                cenInfoGes.ajouterCentreInformatique(centreInfo);
+                return PartialView("_creerCentreduClient");
+            }
+            catch
+            {
+                ModelState.AddModelError("AddCentreInformatique", "L'ajout a échoué");
+                return View();
+            }
+        }
+
         public ActionResult ContratDuClient(int id)
         {
+            // Mettre le client dans le ViewBag
+            CentreInformatique leCentre = cenInfoGes.afficherCentreInformatiqueParID(id);
+            TempData["leCentreInfo"] = leCentre;
+            ViewBag.LeClient = leCentre.leClient.nom_client;
+            ViewBag.ClientID = leCentre.leClient.clientID;
+
+            // Mettre le centre informatique dans le ViewBag
+            CentreInformatique leCentreInfo = cenInfoGes.afficherCentreInformatiqueParID(id);
+            TempData["leCentreInfo"] = leCentreInfo;
+            ViewBag.AdresseCentreInfo = leCentreInfo.adresse_centre;
+            ViewBag.CentreInfoID = leCentreInfo.centreInformatiqueID;
+
+            
+            // Recuperer le contrat
             ContratGestionnaire conGes = new ContratGestionnaire();
             IEnumerable<Contrat> lstContrats = conGes.afficherTousLesContrats();
             Contrat leContrat = lstContrats.FirstOrDefault(contrat => contrat.centreInformatiqueID == id);
@@ -138,20 +198,59 @@ namespace MaintInfoWeb.Controllers
             }
             else
             {
+                string st = string.Empty;
+                switch (leContrat.statut )
+                {
+                    case 1:
+                        st = "En cours";
+                        break;
+                    case 2:
+                        st = "Renouvellé";
+                        break;
+                    case 3:
+                        st = "Résilié";
+                        break;
+                }
+                ViewBag.leStatut = st;
                 return PartialView("_afficherContratDuCentre", leContrat);
             } 
         }
 
-        public ActionResult CreerCentreduClient(int id)
-        {
-            IEnumerable<Client> lstClients = cliGes.afficherTousLesClients();
-            TempData["lstClients"] = lstClients;
-            ViewBag.LesClients = new SelectList(lstClients, "clientID", "nom_client");
-            IEnumerable<Secteur> lstSecteurs = secGes.afficherTousLesSecteurs();
-            TempData["lstSecteurs"] = lstSecteurs;
-            ViewBag.LesSecteurs = new SelectList(lstSecteurs, "secteurID", "libelleSecteur");
 
-            return PartialView("_creerCentreduClient");
+        public ActionResult RenouvellerContrat(int id)
+        {
+            // Recuperer le contrat
+            ContratGestionnaire conGes = new ContratGestionnaire();
+            Contrat leContrat = conGes.afficherContratParID(id);
+            if (leContrat != null)
+            {
+                int AnNow = Convert.ToInt32(DateTime.Now.Year);
+                int AnEch = Convert.ToInt32(leContrat.date_echeance.Year);
+                if((AnEch - AnNow) < 1)
+                {
+                    leContrat.statut = 2;
+                    conGes.modifierContrat(leContrat);
+                }
+            }
+            return View("_afficherContratDuCentre", leContrat);
+        }
+
+        public ActionResult ResilierContrat(int id)
+        {
+            // Recuperer le contrat
+            ContratGestionnaire conGes = new ContratGestionnaire();
+            Contrat leContrat = conGes.afficherContratParID(id);
+            if (leContrat != null)
+            {
+                int AnNow = Convert.ToInt32(DateTime.Now.Year);
+                int AnEch = Convert.ToInt32(leContrat.date_echeance.Year);
+                if ((AnEch - AnNow) < 1)
+                {
+                    leContrat.statut = 3;
+                    conGes.modifierContrat(leContrat);
+                }
+            }
+            return View("_afficherContratDuCentre", leContrat);
         }
 
         #region Méthodes non utilisées

@@ -12,19 +12,19 @@ namespace MaintInfoBll
 {
     public class TarifManager
     {
-        private IRepository<Tarif> _tarifRepository;
+        private IRepository<Tarif> _tarifDao;
 
-        public TarifManager()
+        public TarifManager() { }
+        public TarifManager(IRepository<Tarif> repos)
         {
-            this._tarifRepository = new Repository<Tarif>();
+            this._tarifDao = repos;
         }
 
         public void ajouterTarif(Tarif tf)
         {
             try
             {
-                _tarifRepository.Insert(tf);
-                _tarifRepository.Save(); 
+                _tarifDao.Insert(tf);  
             }
             catch (Exception)
             {
@@ -36,8 +36,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _tarifRepository.Update(tf);
-                _tarifRepository.Save(); 
+                _tarifDao.Update(tf);  
             }
             catch (Exception)
             {
@@ -50,8 +49,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _tarifRepository.Delete(tf);
-                _tarifRepository.Save(); 
+                _tarifDao.Delete(tf); 
             }
             catch (Exception)
             {
@@ -64,7 +62,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _tarifRepository.GetAll();
+                return _tarifDao.GetAll();
             }
             catch (Exception)
             {
@@ -77,7 +75,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _tarifRepository.GetSingleById(id);
+                return _tarifDao.GetSingleById(id);
             }
             catch (Exception)
             {

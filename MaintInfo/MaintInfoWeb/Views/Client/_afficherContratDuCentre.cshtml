@@ -1,11 +1,11 @@
 ﻿@model MaintInfoBo.Contrat
 
 <div>
-    <h4>Contrat du client :</h4>
+    <h4>Contrat du centre informatique : @ViewBag.AdresseCentreInfo</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.montant_contrat)
+            @Html.DisplayName("Montant :")
         </dt>
 
         <dd>
@@ -13,15 +13,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.statut)
+            @Html.DisplayName("Statut :")
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.statut)
+            @Html.DisplayFor(model => model.statut) @ViewBag.leStatut
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.commentaire)
+            @Html.DisplayName("Commentaire :")
         </dt>
 
         <dd>
@@ -29,7 +29,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.date_creation)
+            @Html.DisplayName("Date de création :")
         </dt>
 
         <dd>
@@ -37,32 +37,35 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.date_echeance)
+            @Html.DisplayName("Date d'échéance :")
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.date_echeance)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.date_resiliation)
-        </dt>
+        @if (Model.statut == 3)
+        {
+            <dt>
+                @Html.DisplayName("Date de résiliation :")
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.date_resiliation)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.centreInformatiqueID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.centreInformatiqueID)
-        </dd>
-
+            <dd>
+                @Html.DisplayFor(model => model.date_resiliation)
+            </dd>
+        }
+        
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.contratID }) |
+    @if (Model.statut == 1 || Model.statut == 2)
+    {
+        @Html.ActionLink("Renouveller | ", "RenouvellerContrat", new { id = Model.contratID },
+            new { onclick = "return confirm('Etes-vous sûr?');" }) 
+
+        @Html.ActionLink("Résilier | ", "ResilierContrat", new { id = Model.contratID },
+            new { onclick = "return confirm('Etes-vous sûr?');" }) 
+    }
+    
     @Html.ActionLink("Annuler", "Index")
 </p>

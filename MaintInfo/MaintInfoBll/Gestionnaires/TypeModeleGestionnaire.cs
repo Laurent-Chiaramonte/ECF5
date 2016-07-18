@@ -1,5 +1,6 @@
 ﻿using MaintInfoBll.Gestionnaires.GestionnaireExceptions;
 using MaintInfoBo;
+using MaintInfoDal.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace MaintInfoBll.Gestionnaires
 
         public TypeModeleGestionnaire()
         {
-            tmMngr = new TypeModeleManager();
+            tmMngr = new TypeModeleManager(new TypeModeleDao());
         }
 
         public void ajouterTypeModele(TypeModele tm)

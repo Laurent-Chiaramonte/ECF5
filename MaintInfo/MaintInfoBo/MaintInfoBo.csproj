@@ -46,21 +46,28 @@
     <Compile Include="Contrat.cs" />
     <Compile Include="Equipement.cs" />
     <Compile Include="Exceptions\CentreInformatiqueExceptions\CentreInformatiqueException.cs" />
+    <Compile Include="Exceptions\CentreInformatiqueExceptions\NotExistCentreInformatiqueException.cs" />
     <Compile Include="Exceptions\ClientExceptions\ClientException.cs" />
+    <Compile Include="Exceptions\ClientExceptions\NotExistClientException.cs" />
     <Compile Include="Exceptions\ContratExceptions\ContratException.cs" />
+    <Compile Include="Exceptions\ContratExceptions\NotExistContratException.cs" />
     <Compile Include="Exceptions\EquipementExceptions\EquipementException.cs" />
+    <Compile Include="Exceptions\EquipementExceptions\NotExistEquipementException.cs" />
     <Compile Include="Exceptions\MaintInfoException.cs" />
     <Compile Include="Exceptions\ModeleExceptions\ModeleException.cs" />
+    <Compile Include="Exceptions\ModeleExceptions\NotExistModeleException.cs" />
+    <Compile Include="Exceptions\SecteurExceptions\NotExistSecteurException.cs" />
     <Compile Include="Exceptions\SecteurExceptions\SecteurException.cs" />
+    <Compile Include="Exceptions\TarifExceptions\NotExistTarifException.cs" />
     <Compile Include="Exceptions\TarifExceptions\TarifException.cs" />
-    <Compile Include="Exceptions\TypeExceptions\TypeException.cs" />
+    <Compile Include="Exceptions\TypeModeleExceptions\NotExistTypeModeleException.cs" />
+    <Compile Include="Exceptions\TypeModeleExceptions\TypeModeleException.cs" />
     <Compile Include="Modele.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Secteur.cs" />
     <Compile Include="Tarif.cs" />
     <Compile Include="TypeModele.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

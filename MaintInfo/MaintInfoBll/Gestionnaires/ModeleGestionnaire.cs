@@ -1,5 +1,6 @@
 ﻿using MaintInfoBll.Gestionnaires.GestionnaireExceptions;
 using MaintInfoBo;
+using MaintInfoDal.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace MaintInfoBll.Gestionnaires
         ModeleManager mdMngr;
         public ModeleGestionnaire()
         {
-            mdMngr = new ModeleManager();
+            mdMngr = new ModeleManager(new ModeleDao());
         }
 
         public void ajouterModele(Modele md)

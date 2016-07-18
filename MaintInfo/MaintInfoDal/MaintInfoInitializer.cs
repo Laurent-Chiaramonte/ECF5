@@ -78,6 +78,8 @@ namespace MaintInfoDal
                 ville_centre = "Marseille",
                 tel_centre = "0491691322",
                 clientID = 1,
+                leClient = cl1,
+                leSecteur = s1,
                 secteurID = 1
             };
             db.CentresInformatique.Add(ci1);
@@ -88,8 +90,8 @@ namespace MaintInfoDal
                 cp_centre = "13002",
                 ville_centre = "Marseille",
                 tel_centre = "0491601462",
-                clientID = 1,
-                secteurID = 1
+                leClient = cl1,
+                leSecteur = s1,
             };
             db.CentresInformatique.Add(ci2);
             CentreInformatique ci3 = new CentreInformatique
@@ -99,8 +101,8 @@ namespace MaintInfoDal
                 cp_centre = "13011",
                 ville_centre = "Marseille",
                 tel_centre = "0491691322",
-                clientID = 2,
-                secteurID = 1
+                leClient = cl2,
+                leSecteur = s1,
             };
             db.CentresInformatique.Add(ci3);
             #endregion
@@ -113,7 +115,8 @@ namespace MaintInfoDal
                 statut = 1,
                 date_creation = new DateTime(2016, 02, 12),
                 date_echeance = new DateTime(2017, 02, 12),
-                centreInformatiqueID = 1
+                centreInformatiqueID = 1,
+                leCentre = ci1
             };
             db.Contrats.Add(ct1);
             Contrat ct2 = new Contrat
@@ -123,7 +126,8 @@ namespace MaintInfoDal
                 statut = 1,
                 date_creation = new DateTime(2016, 06, 24),
                 date_echeance = new DateTime(2017, 06, 24),
-                centreInformatiqueID = 2
+                centreInformatiqueID = 2,
+                leCentre = ci2
             };
             db.Contrats.Add(ct2);
             Contrat ct3 = new Contrat
@@ -133,7 +137,8 @@ namespace MaintInfoDal
                 statut = 1,
                 date_creation = new DateTime(2016, 03, 13),
                 date_echeance = new DateTime(2017, 03, 13),
-                centreInformatiqueID = 3
+                centreInformatiqueID = 3,
+                leCentre = ci3
             };
             db.Contrats.Add(ct3);
             #endregion

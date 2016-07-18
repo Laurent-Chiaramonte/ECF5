@@ -1,5 +1,6 @@
 ﻿using MaintInfoBll.Gestionnaires.GestionnaireExceptions;
 using MaintInfoBo;
+using MaintInfoDal.Dao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace MaintInfoBll.Gestionnaires
 
         public CentreInformatiqueGestionnaire()
         {
-            ciMngr = new CentreInformatiqueManager();
+            ciMngr = new CentreInformatiqueManager(new CentreInformatiqueDao());
         }
 
         public void ajouterCentreInformatique(CentreInformatique ci)

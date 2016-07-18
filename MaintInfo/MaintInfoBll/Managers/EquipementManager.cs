@@ -12,19 +12,20 @@ namespace MaintInfoBll
 {
     public class EquipementManager
     {
-        private IRepository<Equipement> _equipementRepository;
+        private IRepository<Equipement> _equipementDao;
 
-        public EquipementManager()
+        public EquipementManager() { }
+
+        public EquipementManager(IRepository<Equipement> repos)
         {
-            this._equipementRepository = new Repository<Equipement>();
+            this._equipementDao = repos;
         }
 
         public void ajouterEquipement(Equipement eqt)
         {
             try
             {
-                _equipementRepository.Insert(eqt);
-                _equipementRepository.Save();
+                _equipementDao.Insert(eqt);
             }
             catch (Exception)
             {
@@ -36,8 +37,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _equipementRepository.Update(eqt);
-                _equipementRepository.Save();
+                _equipementDao.Update(eqt); 
             }
             catch (Exception)
             {
@@ -49,8 +49,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _equipementRepository.Delete(eqt);
-                _equipementRepository.Save();
+                _equipementDao.Delete(eqt); 
             }
             catch (Exception)
             {
@@ -62,7 +61,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _equipementRepository.GetAll();
+                return _equipementDao.GetAll();
             }
             catch (Exception)
             {
@@ -74,7 +73,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _equipementRepository.GetSingleById(id);
+                return _equipementDao.GetSingleById(id);
             }
             catch (Exception)
             {
@@ -84,7 +83,7 @@ namespace MaintInfoBll
 
         public bool equipementExiste(string nserie)
         {
-            return _equipementRepository.GetAll().Any(equip => 
+            return _equipementDao.GetAll().Any(equip => 
                 string.Compare(equip.num_serie, nserie, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
     }

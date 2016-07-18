@@ -11,19 +11,19 @@ namespace MaintInfoBll
 {
     public class CentreInformatiqueManager
     {
-        private IRepository<CentreInformatique> _centreInformatiqueRepository;
+        private IRepository<CentreInformatique> _centreInformatiqueDao;
 
-        public CentreInformatiqueManager()
+        public CentreInformatiqueManager() { }
+        public CentreInformatiqueManager(IRepository<CentreInformatique> repos)
         {
-            this._centreInformatiqueRepository = new Repository<CentreInformatique>();
+            _centreInformatiqueDao = repos;
         }
 
         public void ajouterCentreInformatique(CentreInformatique cti)
         {
             try
             {
-                _centreInformatiqueRepository.Insert(cti);
-                _centreInformatiqueRepository.Save();
+                _centreInformatiqueDao.Insert(cti); 
             }
             catch (Exception)
             {
@@ -35,8 +35,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _centreInformatiqueRepository.Update(cti);
-                _centreInformatiqueRepository.Save();
+                _centreInformatiqueDao.Update(cti); 
             }
             catch (Exception)
             {
@@ -48,8 +47,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _centreInformatiqueRepository.Delete(cti);
-                _centreInformatiqueRepository.Save();
+                _centreInformatiqueDao.Delete(cti); 
             }
             catch (Exception)
             {
@@ -61,7 +59,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _centreInformatiqueRepository.GetAll();
+                return _centreInformatiqueDao.GetAll();
             }
             catch (Exception)
             {
@@ -73,7 +71,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _centreInformatiqueRepository.GetSingleById(id);
+                return _centreInformatiqueDao.GetSingleById(id);
             }
             catch (Exception)
             {
@@ -83,7 +81,7 @@ namespace MaintInfoBll
 
         public bool centreInformatiqueExiste(string adresse)
         {
-            return _centreInformatiqueRepository.GetAll().Any(client => string.Compare(client.adresse_centre, adresse, StringComparison.CurrentCultureIgnoreCase) == 0);
+            return _centreInformatiqueDao.GetAll().Any(client => string.Compare(client.adresse_centre, adresse, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
     }
 }

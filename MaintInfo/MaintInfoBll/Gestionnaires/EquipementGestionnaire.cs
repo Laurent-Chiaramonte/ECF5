@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using MaintInfoBll.Gestionnaires.GestionnaireExceptions;
 using MaintInfoBo;
+using MaintInfoDal.Dao;
 
 namespace MaintInfoBll.Gestionnaires
 {
@@ -15,7 +16,7 @@ namespace MaintInfoBll.Gestionnaires
 
         public EquipementGestionnaire()
         {
-            etMngr = new EquipementManager();
+            etMngr = new EquipementManager(new EquipementDao());
         }
 
         public void ajouterEquipement(Equipement et)

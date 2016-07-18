@@ -57,6 +57,14 @@
     <Compile Include="Configuration\SecteurConfiguration.cs" />
     <Compile Include="Configuration\TarifConfiguration.cs" />
     <Compile Include="Configuration\TypeModeleConfiguration.cs" />
+    <Compile Include="Dao\CentreInformatiqueDao.cs" />
+    <Compile Include="Dao\ClientDao.cs" />
+    <Compile Include="Dao\ContratDao.cs" />
+    <Compile Include="Dao\EquipementDao.cs" />
+    <Compile Include="Dao\ModeleDao.cs" />
+    <Compile Include="Dao\SecteurDao.cs" />
+    <Compile Include="Dao\TarifDao.cs" />
+    <Compile Include="Dao\TypeModeleDao.cs" />
     <Compile Include="Exceptions\DaoException.cs" />
     <Compile Include="Exceptions\DaoExceptionAfficheMessage.cs" />
     <Compile Include="Exceptions\DaoExceptionFinAppli.cs" />

@@ -12,19 +12,19 @@ namespace MaintInfoBll
 {
     public class ContratManager
     {
-        private IRepository<Contrat> _contratRepository;
+        private IRepository<Contrat> _contratDao;
 
-        public ContratManager()
+        public ContratManager() { }
+        public ContratManager(IRepository<Contrat> repos)
         {
-            this._contratRepository = new Repository<Contrat>();
+            this._contratDao = repos;
         }
 
         public void ajouterContrat(Contrat ct)
         {
             try
             {
-                _contratRepository.Insert(ct);
-                _contratRepository.Save();
+                _contratDao.Insert(ct); 
             }
             catch (Exception)
             {
@@ -37,8 +37,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _contratRepository.Update(ct);
-                _contratRepository.Save();
+                _contratDao.Update(ct); 
             }
             catch (Exception)
             {
@@ -51,8 +50,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _contratRepository.Delete(ct);
-                _contratRepository.Save();
+                _contratDao.Delete(ct); 
             }
             catch (Exception)
             {
@@ -65,7 +63,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _contratRepository.GetAll();
+                return _contratDao.GetAll();
             }
             catch (Exception)
             {
@@ -78,7 +76,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _contratRepository.GetSingleById(id);
+                return _contratDao.GetSingleById(id);
             }
             catch (Exception)
             {
@@ -89,7 +87,7 @@ namespace MaintInfoBll
 
         public bool contratExiste(int idCenInfo)
         {
-            return _contratRepository.GetAll().Any(contrat =>
+            return _contratDao.GetAll().Any(contrat =>
                 string.Compare(contrat.centreInformatiqueID.ToString(), idCenInfo.ToString(),
                 StringComparison.CurrentCultureIgnoreCase) == 0);
         }

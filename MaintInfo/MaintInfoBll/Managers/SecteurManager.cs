@@ -12,19 +12,19 @@ namespace MaintInfoBll
 {
     public class SecteurManager
     {
-        private IRepository<Secteur> _secteurRepository;
+        private IRepository<Secteur> _secteurDao;
 
-        public SecteurManager()
+        public SecteurManager() { }
+        public SecteurManager(IRepository<Secteur> repos)
         {
-            this._secteurRepository = new Repository<Secteur>();
+            this._secteurDao = repos;
         }
 
         public void ajouterSecteur(Secteur sct)
         {
             try
             {
-                _secteurRepository.Insert(sct);
-                _secteurRepository.Save(); 
+                _secteurDao.Insert(sct); 
             }
             catch (Exception)
             {
@@ -36,8 +36,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _secteurRepository.Update(sct);
-                _secteurRepository.Save(); 
+                _secteurDao.Update(sct); 
             }
             catch (Exception)
             {
@@ -49,8 +48,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _secteurRepository.Delete(sct);
-                _secteurRepository.Save(); 
+                _secteurDao.Delete(sct); 
             }
             catch (Exception)
             {
@@ -62,7 +60,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _secteurRepository.GetAll();
+                return _secteurDao.GetAll();
             }
             catch (Exception)
             {
@@ -74,7 +72,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _secteurRepository.GetSingleById(id);
+                return _secteurDao.GetSingleById(id);
             }
             catch (Exception)
             {
@@ -84,7 +82,7 @@ namespace MaintInfoBll
 
         public bool secteurExiste(string lib)
         {
-            return _secteurRepository.GetAll().Any(secteur => string.Compare(secteur.libelleSecteur, lib,
+            return _secteurDao.GetAll().Any(secteur => string.Compare(secteur.libelleSecteur, lib,
                 StringComparison.CurrentCultureIgnoreCase) == 0);
         }
 

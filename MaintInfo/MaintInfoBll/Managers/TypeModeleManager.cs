@@ -12,19 +12,19 @@ namespace MaintInfoBll
 {
     public class TypeModeleManager
     {
-        private IRepository<TypeModele> _typeModeleRepository;
+        private IRepository<TypeModele> _typeModeleDao;
 
-        public TypeModeleManager()
+        public TypeModeleManager() { }
+        public TypeModeleManager(IRepository<TypeModele> repos)
         {
-            this._typeModeleRepository = new Repository<TypeModele>();
+            this._typeModeleDao = repos;
         }
 
         public void ajouterTypeModele(TypeModele tm)
         {
             try
             {
-                _typeModeleRepository.Insert(tm);
-                _typeModeleRepository.Save(); 
+                _typeModeleDao.Insert(tm);  
             }
             catch (Exception)
             {
@@ -37,8 +37,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _typeModeleRepository.Update(tm);
-                _typeModeleRepository.Save(); 
+                _typeModeleDao.Update(tm); 
             }
             catch (Exception)
             {
@@ -51,8 +50,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _typeModeleRepository.Delete(tm);
-                _typeModeleRepository.Save(); 
+                _typeModeleDao.Delete(tm); 
             }
             catch (Exception)
             {
@@ -65,7 +63,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _typeModeleRepository.GetAll();
+                return _typeModeleDao.GetAll();
             }
             catch (Exception)
             {
@@ -78,7 +76,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _typeModeleRepository.GetSingleById(id);
+                return _typeModeleDao.GetSingleById(id);
             }
             catch (Exception)
             {
@@ -89,7 +87,7 @@ namespace MaintInfoBll
 
         public bool typeModeleExiste(string des)
         {
-            return _typeModeleRepository.GetAll().Any(typemode => string.Compare(typemode.designation_type, des,
+            return _typeModeleDao.GetAll().Any(typemode => string.Compare(typemode.designation_type, des,
                 StringComparison.CurrentCultureIgnoreCase) == 0);
         }
     }

@@ -11,19 +11,20 @@ namespace MaintInfoBll
 {
     public class ClientManager
     {
-        private IRepository<Client> _clientRepository;
+        private IRepository<Client> _clientDao;
 
-        public ClientManager()
+        public ClientManager() { }
+
+        public ClientManager(IRepository<Client> repos)
         {
-            this._clientRepository = new Repository<Client>();
+            this._clientDao = repos;
         }
 
         public void ajouterClient(Client cli)
         {
             try
             {
-                _clientRepository.Insert(cli);
-                _clientRepository.Save();
+                _clientDao.Insert(cli);
             }
             catch (Exception)
             {
@@ -35,8 +36,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _clientRepository.Update(cli);
-                _clientRepository.Save();
+                _clientDao.Update(cli);
             }
             catch (Exception)
             {
@@ -48,8 +48,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _clientRepository.Delete(cli);
-                _clientRepository.Save();
+                _clientDao.Delete(cli);
             }
             catch (Exception)
             {
@@ -61,7 +60,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _clientRepository.GetAll();
+                return _clientDao.GetAll();
             }
             catch (Exception)
             {
@@ -73,7 +72,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _clientRepository.GetSingleById(id);
+                return _clientDao.GetSingleById(id);
             }
             catch (Exception)
             {
@@ -83,7 +82,7 @@ namespace MaintInfoBll
 
         public bool clientExiste(string nom)
         {
-            return _clientRepository.GetAll().Any(client => string.Compare(client.nom_client, nom, StringComparison.CurrentCultureIgnoreCase) == 0);
+            return _clientDao.GetAll().Any(client => string.Compare(client.nom_client, nom, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
     }
 }

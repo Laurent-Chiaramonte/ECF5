@@ -11,19 +11,19 @@ namespace MaintInfoBll
 {
     public class ModeleManager
     {
-        private IRepository<Modele> _modeleRepository;
+        private IRepository<Modele> _modeleDao;
 
-        public ModeleManager()
+        public ModeleManager() { }
+        public ModeleManager(IRepository<Modele> repos)
         {
-            this._modeleRepository = new Repository<Modele>();
+            this._modeleDao = repos;
         }
 
         public void ajouterModele(Modele mod)
         {
             try
             {
-                _modeleRepository.Insert(mod);
-                _modeleRepository.Save(); 
+                _modeleDao.Insert(mod);  
             }
             catch (Exception)
             {
@@ -35,8 +35,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _modeleRepository.Update(mod);
-                _modeleRepository.Save(); 
+                _modeleDao.Update(mod);  
             }
             catch (Exception)
             {
@@ -48,8 +47,7 @@ namespace MaintInfoBll
         {
             try
             {
-                _modeleRepository.Delete(mod);
-                _modeleRepository.Save(); 
+                _modeleDao.Delete(mod); 
             }
             catch (Exception)
             {
@@ -61,7 +59,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _modeleRepository.GetAll();
+                return _modeleDao.GetAll();
             }
             catch (Exception)
             {
@@ -73,7 +71,7 @@ namespace MaintInfoBll
         {
             try
             {
-                return _modeleRepository.GetSingleById(id);
+                return _modeleDao.GetSingleById(id);
             }
             catch (Exception)
             {
@@ -83,7 +81,7 @@ namespace MaintInfoBll
 
         public bool modeleExiste(string des)
         {
-            return _modeleRepository.GetAll().Any(modele => string.Compare(modele.designation_modele, des,
+            return _modeleDao.GetAll().Any(modele => string.Compare(modele.designation_modele, des,
                 StringComparison.CurrentCultureIgnoreCase) == 0);
         }
     }

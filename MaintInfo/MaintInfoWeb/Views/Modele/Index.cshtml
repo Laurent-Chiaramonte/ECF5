@@ -4,21 +4,19 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Liste des modèles :</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.designation_modele)
+            @Html.DisplayName("Désignation")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tarifID)
+            @Html.DisplayName("Tarif")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.typeModeleID)
+            @Html.DisplayName("Type de Modèle")
         </th>
         <th></th>
     </tr>
@@ -32,14 +30,13 @@
             @Html.DisplayFor(modelItem => item.tarifID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.typeModeleID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.modeleID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.modeleID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.modeleID })
+            @Html.DisplayFor(modelItem => item.leType.designation_type)
         </td>
     </tr>
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Retour à l'accueil", "Index", "Home")
+</div>

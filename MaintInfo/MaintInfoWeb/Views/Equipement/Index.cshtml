@@ -4,24 +4,22 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Liste des équipements :</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.num_serie)
+            @Html.DisplayName("Numéro de Série")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.planification)
+            @Html.DisplayName("Planification")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.contratID)
+            @Html.DisplayName("Contrat")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.modeleID)
+            @Html.DisplayName("Modèle")
         </th>
         <th></th>
     </tr>
@@ -35,17 +33,16 @@
             @Html.DisplayFor(modelItem => item.planification)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.contratID)
+            @Html.DisplayFor(modelItem => item.leContrat.contratID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.modeleID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.equipementID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.equipementID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.equipementID })
+            @Html.DisplayFor(modelItem => item.leModele.designation_modele)
         </td>
     </tr>
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Retour à l'accueil", "Index", "Home")
+</div>

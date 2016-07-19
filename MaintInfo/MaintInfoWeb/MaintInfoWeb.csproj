@@ -183,31 +183,16 @@
     <Content Include="Views\CentreInformatique\Index.cshtml" />
     <Content Include="Views\Contrat\Index.cshtml" />
     <Content Include="Views\Equipement\Index.cshtml" />
-    <Content Include="Views\Equipement\Create.cshtml" />
-    <Content Include="Views\Equipement\Edit.cshtml" />
-    <Content Include="Views\Equipement\Delete.cshtml" />
     <Content Include="Views\Modele\Index.cshtml" />
-    <Content Include="Views\Modele\Create.cshtml" />
-    <Content Include="Views\Modele\Edit.cshtml" />
-    <Content Include="Views\Modele\Delete.cshtml" />
     <Content Include="Views\Secteur\Index.cshtml" />
-    <Content Include="Views\Secteur\Create.cshtml" />
-    <Content Include="Views\Secteur\Edit.cshtml" />
     <Content Include="Views\Tarif\Index.cshtml" />
-    <Content Include="Views\Tarif\Create.cshtml" />
-    <Content Include="Views\Tarif\Edit.cshtml" />
     <Content Include="Views\TypeModele\Index.cshtml" />
-    <Content Include="Views\TypeModele\Create.cshtml" />
-    <Content Include="Views\TypeModele\Edit.cshtml" />
     <Content Include="Views\Client\_afficherCentresDuClient.cshtml" />
     <Content Include="Views\Client\_edit.cshtml" />
     <Content Include="Views\Client\_create.cshtml" />
-    <Content Include="Views\CentreInformatique\_create.cshtml" />
-    <Content Include="Views\CentreInformatique\_edit.cshtml" />
-    <Content Include="Views\Contrat\_edit.cshtml" />
     <Content Include="Views\Client\_afficherContratDuCentre.cshtml" />
-    <Content Include="Views\Client\_creerContratDuCentre.cshtml" />
     <Content Include="Views\Client\_creerCentreDuClient.cshtml" />
+    <Content Include="Views\Client\_creerContratDuCentre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

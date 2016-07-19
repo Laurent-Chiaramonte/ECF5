@@ -15,12 +15,14 @@ namespace MaintInfoWeb.Controllers
         private ClientGestionnaire cliGes;
         private CentreInformatiqueGestionnaire cenInfoGes;
         private SecteurGestionnaire secGes;
+        private ContratGestionnaire conGes;
 
         public ClientController()
         {
             cliGes = new ClientGestionnaire();
             cenInfoGes = new CentreInformatiqueGestionnaire();
             secGes = new SecteurGestionnaire();
+            conGes = new ContratGestionnaire();
         }
 
         // GET: Client
@@ -42,22 +44,28 @@ namespace MaintInfoWeb.Controllers
         [HttpPost]
         public ActionResult Create(Client client)
         {
-            if (cliGes.clientExiste(client.nom_client))
-            {
-                ModelState.AddModelError("Nom", "Ce nom de client existe déjà");
-                return View(client);
-            }
-            if (!ModelState.IsValid)
-                return View(client);
             try
             {
-                cliGes.ajouterClient(client);
-                return RedirectToAction("Index");
+                if (!cliGes.clientExiste(client.nom_client))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        cliGes.ajouterClient(client);
+                        return RedirectToAction("Index");
+                    }
+                    else
+                        return View();
+                }
+                else
+                {
+                    ViewBag.Message = "Le client existe déjà";
+                    return View("error");
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                ModelState.AddModelError("AddClient", "L'ajout a échoué");
-                return View();
+                ViewBag.Message = ex.Message;
+                return View("error");
             }
         }
 
@@ -66,6 +74,12 @@ namespace MaintInfoWeb.Controllers
         {
             try
             {
+                // Mettre le client dans le ViewBag
+                Client leClient = cliGes.afficherClientParID(id);
+                TempData["leClient"] = leClient;
+                ViewBag.LeClient = leClient.nom_client;
+                ViewBag.ClientID = leClient.clientID;
+
                 Client client = cliGes.afficherClientParID(id);
                 if (client == null)
                     return View("Error");
@@ -88,9 +102,10 @@ namespace MaintInfoWeb.Controllers
                 cliGes.modifierClient(client);
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                ViewBag.Message = ex.Message;
+                return View("error");
             }
         }
 
@@ -120,7 +135,7 @@ namespace MaintInfoWeb.Controllers
 
             if (lesCentres.Count() == 0)
             {
-                return PartialView("_creerCentreDuClient");
+                return PartialView("_creerCentreDuClient", id);
             }
             else
             {
@@ -140,6 +155,7 @@ namespace MaintInfoWeb.Controllers
             IEnumerable<Client> lstClients = cliGes.afficherTousLesClients();
             TempData["lstClients"] = lstClients;
             ViewBag.LesClients = new SelectList(lstClients, "clientID", "nom_client", leClient.clientID);
+            
             // Liste secteurs
             IEnumerable<Secteur> lstSecteurs = secGes.afficherTousLesSecteurs();
             TempData["lstSecteurs"] = lstSecteurs;
@@ -152,24 +168,29 @@ namespace MaintInfoWeb.Controllers
         [HttpPost]
         public ActionResult CreerCentreduClient(CentreInformatique centreInfo)
         {
-            if (cenInfoGes.centreInformatiqueExiste(centreInfo.adresse_centre))
-            {
-                ModelState.AddModelError("Adresse", "Un centre existe déjà à cette adresse");
-                return View(centreInfo);
-            }
-            if (!ModelState.IsValid)
-            {
-                return View(centreInfo);
-            }
             try
             {
-                cenInfoGes.ajouterCentreInformatique(centreInfo);
-                return PartialView("_creerCentreduClient");
+                if (!cenInfoGes.centreInformatiqueExiste(centreInfo.adresse_centre))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        cenInfoGes.ajouterCentreInformatique(centreInfo);
+                        IEnumerable<Client> listeDesClients = cliGes.afficherTousLesClients();
+                        return View("Index", listeDesClients);
+                    }
+                    else
+                        return View();
+                }
+                else
+                {
+                    ViewBag.Message = "Le centre informatique existe déjà";
+                    return View("error");
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                ModelState.AddModelError("AddCentreInformatique", "L'ajout a échoué");
-                return View();
+                ViewBag.Message = ex.Message;
+                return View("error");
             }
         }
 
@@ -180,6 +201,11 @@ namespace MaintInfoWeb.Controllers
             TempData["leCentreInfo"] = leCentre;
             ViewBag.LeClient = leCentre.leClient.nom_client;
             ViewBag.ClientID = leCentre.leClient.clientID;
+
+            // Liste des centres informatique
+            IEnumerable<CentreInformatique> lstCentres = cenInfoGes.afficherTousLesCentresInformatique();
+            TempData["lstCentres"] = lstCentres;
+            ViewBag.LesCentres = new SelectList(lstCentres, "centreInformatiqueID", "adresse_centre", leCentre.centreInformatiqueID);
 
             // Mettre le centre informatique dans le ViewBag
             CentreInformatique leCentreInfo = cenInfoGes.afficherCentreInformatiqueParID(id);
@@ -216,6 +242,37 @@ namespace MaintInfoWeb.Controllers
             } 
         }
 
+        [HttpPost]
+        public ActionResult CreerContratDuCentre(Contrat contrat)
+        {
+            try
+            {
+                if (!conGes.contratExiste(contrat.leCentre.centreInformatiqueID))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        contrat.date_creation = DateTime.Now;
+                        contrat.date_echeance = contrat.date_creation.AddYears(1);
+                        contrat.statut = 1;
+                        conGes.ajouterContrat(contrat);
+                        IEnumerable<Client> listeDesClients = cliGes.afficherTousLesClients();
+                        return View("Index", listeDesClients);
+                    }
+                    else
+                        return View();
+                }
+                else
+                {
+                    ViewBag.Message = "Un contrat existe déjà pour ce centre informatique";
+                    return View("error");
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = ex.Message;
+                return View("error");
+            }
+        }
 
         public ActionResult RenouvellerContrat(int id)
         {

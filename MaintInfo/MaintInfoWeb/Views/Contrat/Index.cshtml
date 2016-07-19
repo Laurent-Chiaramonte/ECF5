@@ -6,10 +6,6 @@
 
 <h2>Liste des contrats :</h2>
 
-<p>
-    @Ajax.ActionLink("Créer nouveau contrat", "Create",
-        new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })
-</p>
 <table class="table">
     <tr>
         <th>
@@ -31,7 +27,7 @@
             @Html.DisplayName("Date de résiliation")
         </th>
         <th>
-            @Html.DisplayName("ID du centre informatique")
+            @Html.DisplayName("Centre informatique")
         </th>
         <th></th>
     </tr>
@@ -57,17 +53,14 @@
             @Html.DisplayFor(modelItem => item.date_resiliation)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.centreInformatiqueID)
-        </td>
-        <td>
-            @Ajax.ActionLink("Modifier", "Edit",
-                new { id = item.centreInformatiqueID },
-                new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })|
-            @Html.ActionLink("Details", "Details", new { id=item.contratID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.contratID })
+            @Html.DisplayFor(modelItem => item.leCentre.adresse_centre)
         </td>
     </tr>
 }
 
 </table>
 <div id="affct"></div>
+
+<div>
+    @Html.ActionLink("Retour à l'accueil", "Index", "Home")
+</div>

@@ -4,15 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Liste des Types de Modèle :</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.designation_type)
+            @Html.DisplayName("Désignation")
         </th>
         <th></th>
     </tr>
@@ -22,12 +19,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.designation_type)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.typeModeleID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.typeModeleID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.typeModeleID })
-        </td>
     </tr>
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Retour à l'accueil", "Index", "Home")
+</div>

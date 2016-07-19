@@ -4,15 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Liste des secteurs : </h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.libelleSecteur)
+            @Html.DisplayName("Secteur")
         </th>
         <th></th>
     </tr>
@@ -22,12 +19,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.libelleSecteur)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.secteurID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.secteurID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.secteurID })
-        </td>
     </tr>
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Retour à l'accueil", "Index", "Home")
+</div>

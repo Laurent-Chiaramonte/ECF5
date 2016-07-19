@@ -25,10 +25,10 @@
             @Html.DisplayName("Téléphone")
         </th>
         <th>
-            @Html.DisplayName("ClientID")
+            @Html.DisplayName("Client")
         </th>
         <th>
-            @Html.DisplayName("SecteurID")
+            @Html.DisplayName("Secteur")
         </th>
         <th></th>
     </tr>
@@ -48,18 +48,17 @@
             @Html.DisplayFor(modelItem => item.tel_centre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.clientID)
+            @Html.DisplayFor(modelItem => item.leClient.nom_client)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.secteurID)
-        </td>
-        <td>
-            @Ajax.ActionLink("Modifier", "Edit",
-                new { id = item.centreInformatiqueID },
-                new AjaxOptions { UpdateTargetId = "affct", InsertionMode = InsertionMode.Replace })
+            @Html.DisplayFor(modelItem => item.leSecteur.libelleSecteur)
         </td>
     </tr>
 }
 
 </table>
 <div id="affct"></div>
+
+<div>
+    @Html.ActionLink("Retour à l'accueil", "Index", "Home")
+</div>

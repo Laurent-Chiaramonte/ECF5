@@ -4,18 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Liste des tarifs :</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.date_tarif)
+            @Html.DisplayName("Date du tarif")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.montant_tarif)
+            @Html.DisplayName("Montant")
         </th>
         <th></th>
     </tr>
@@ -28,12 +25,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.montant_tarif)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.tarifID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.tarifID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.tarifID })
-        </td>
     </tr>
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Retour à l'accueil", "Index", "Home")
+</div>

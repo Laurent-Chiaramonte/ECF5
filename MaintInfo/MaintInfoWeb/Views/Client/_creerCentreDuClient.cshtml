@@ -41,11 +41,11 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="display: none">
             @Html.Label("Client", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.leClient.clientID, (SelectList)ViewBag.LesClients,
-                    String.Empty, new { @class = "form-control", @disabled = "disable" })
+                    String.Empty, new { @class = "form-control"})
                 @Html.ValidationMessageFor(model => model.leClient.clientID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -53,22 +53,22 @@
         <div class="form-group">
             @Html.Label("Secteur", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.leSecteur.secteurID, (SelectList)ViewBag.LesSecteurs, 
-                    String.Empty, new { @class = "form-control"})
+                @Html.DropDownListFor(model => model.leSecteur.secteurID, (SelectList)ViewBag.LesSecteurs,
+                   String.Empty , new { @class = "form-control"})
                 @Html.ValidationMessageFor(model => model.leSecteur.secteurID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="CreerCentreduClient" class="btn btn-default" />
+                <input type="submit" value="Créer" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retour à la liste", "Index")
 </div>
 
 @section Scripts {
